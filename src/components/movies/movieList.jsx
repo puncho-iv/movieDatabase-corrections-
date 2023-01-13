@@ -5,29 +5,22 @@ import tmdb from "../api/tmdb";
 import {GoPlay} from "react-icons/go"
 
 const MovieList = () => {
-    const api_key ='41467446ef4c8f2ffa78fc5c6692fbd5'
     const image_path = "https://image.tmdb.org/t/p/original"
     const [ movies, setMovies] = useState ([])
+    const [ latest, setLatest ] = useState ([])
     const [ selectedMovies, setSelectedMovies] = useState ([])
 
 
     useEffect(() => {
     const fetchMovies = async() => {
-        const {data} = await tmdb.get("/discover/movie?")
+        const {data} = await tmdb.get("movie/now_playing?")
         setMovies(data.results)
-        setSelectedMovies(data.results[6])
+        setSelectedMovies(data.results[15])
     }
 
     fetchMovies()
 
 }, [])
-
-
-    // return <div className= "d-flex flex-row bd-highlight mb-3 gap-5 offset-md-1 overflow-auto">
-    //     {movies.map ((movie, index) =>{
-    //         return <MovieCard key= {index} {...movie} />
-    //     })}
-    // </div>
 
     const renderMovies = () => (
         movies.map(movie => (

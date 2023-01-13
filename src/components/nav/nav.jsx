@@ -10,7 +10,7 @@ class Nav extends Component{
   state={
     menuItems: ["Action", "Romance", "Sci-Fi"],
     moreMenu: ["Uploads", "Downloads", "Settings"],
-    avatarMenu: ["Change User", "Logout", "Language"]
+    avatarMenu: ["Change User", "Settings", "Edit Profile", "WatchList", "Logout"]
   };
   
 render() {
@@ -34,16 +34,25 @@ render() {
 
       <div className="avatar" >  
         <GrFormAdd id='addUploads'/>
-        <RiSearch2Line id='right-search'/>
-        <BsFillBellFill id='right-avatar'/>
+
+         <BsFillBellFill id='right-avatar'/>
         
         <li id='avatar-shape'>
-        <HiUserCircle id='right-avatar'/>
-        <ul className='nav-item-drop'>{this.state.avatarMenu.map(avatarMenu => <li>{avatarMenu}</li>)}</ul>
+          <HiUserCircle id='right-avatar'/>
+         <ul className='nav-item-drop'>
+          {this.state.avatarMenu.map(avatarMenu => <li>{avatarMenu}
+        </li>)}</ul>
         </li>
+
         
+          {/* <RiSearch2Line id='right-search'/> */}
+        <form id='searchFrm'>
+          <button type='Submit'>Search</button>
+            <input type="text" placeholder='Lookup Movie...' />
+        </form>
+       
+        </div>        
         </div>
-      </div> 
   
    </section>
   )

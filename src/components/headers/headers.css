@@ -16,6 +16,7 @@
 }
 
 .headerListing > .headerList{
+    font-family: Poppins;
     font-size: 1.5rem;
     font-weight: 700;  
     margin-left: 7rem;
@@ -30,7 +31,6 @@
 }
 
 .headerList ul{
-    list-style: none;
     font-size: .85rem;
     font-weight: 700;
     cursor: pointer;
@@ -46,14 +46,23 @@
     height: 2.5rem;
 }
 
-#tabs > li {
+#tabs li a{
+    text-decoration: none;
+    color: var(--color-bg-variant);
+    display: flex;
+    padding: 0.1rem 0.3rem;
+    border-radius: 30px;
+    margin-left: 0.1rem;
+    transition: background-color 200ms ease-in-out;
+} 
+
+#tabs li{
     list-style: none;
-    padding: 0.5rem 0.4rem;
+    padding: 0.3rem 0rem;
     border-radius: 30px;
     transition: background-color 200ms ease-in-out;
     margin-left: 0.1rem;
-    background-color: transparent;
-} 
+}
 
 #tabs{
   list-style: none;
@@ -62,21 +71,23 @@
   cursor: pointer;
   border-radius: 30px;
   align-items: center;
-  padding: 0.1rem 0.2rem;
+  padding: 0.2rem 0 0.2rem 0; 
   margin-bottom: 2rem;
+  text-decoration: none;
 }
 
-#tabs > li:active{
+#tabs > li a:active,
+#tabs > li a:focus{
     display: flex;
     flex-direction: row;
     background: var(--color-bg-variant);
-    border-radius: 30px;
-    padding: 1rem;
+    border-radius: 40px;
+    padding: 1.2rem 0.5rem;
     color: var(--header-color);
     height: 2rem;
     justify-content: center;
     align-items: center;
-    transition: 200ms ease-in-out;
+    transition: 200ms background-color ease-in-out;
     gap: 0.5rem;
     margin-left: -0.1rem;
 }
