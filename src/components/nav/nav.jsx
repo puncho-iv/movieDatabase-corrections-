@@ -46,10 +46,10 @@ render() {
 
         
           {/* <RiSearch2Line id='right-search'/> */}
-        <form id='searchFrm'>
+        {/* <form id='searchFrm'>
           <button type='Submit'>Search</button>
             <input type="text" placeholder='Lookup Movie...' />
-        </form>
+        </form> */}
        
         </div>        
         </div>

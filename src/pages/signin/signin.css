@@ -41,6 +41,7 @@
     background: var(--header-background);
     z-index: -1;
     opacity: 1;
+    border-radius: 8px;
 }
 
 .logo-signin  .signin-image{

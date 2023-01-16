@@ -59,3 +59,140 @@ render() {
 
 
 export default Nav
+
+
+
+
+
+import React, { useEffect, useState } from "react";
+import MovieCard from "./movieCard";
+import "./movieList.css";
+import tmdb from "../api/tmdb";
+import { GoPlay } from "react-icons/go";
+import { Link } from "react-router-dom";
+import { RiSearch2Line } from "react-icons/ri";
+import { getTopRatedMovies } from "../api/moviesService";
+
+const MovieList = () => {
+  const image_path = "https://image.tmdb.org/t/p/original";
+  const [movies, setMovies] = useState([]);
+  const [latest, setLatest] = useState("Movies");
+  const [searchKey, setSearch] = useState([]);
+  const [movieType, setMovieType] = useState("Streaming");
+  const [types] = useState();
+  const [selectedMovies, setSelectedMovies] = useState([]);
+  const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
+  const category01 = ["Movies", "TV"];
+  //retrieving movies api//
+  // useEffect(() => {
+  //   const fetchMovies = async () => {
+  //     const setSelectedMovies(data.results[15]);
+  //   };ta } = await tmdb.get("movie/now_playing?");
+  //     setMovies(data.results);
+  //     setSelecte
+
+  //   fetchMovies();
+  // }, []);
+
+  const renderMovies = (m) =>
+    movies.map((m) => <MovieCard key={m.id} movie={m} />);
+
+  //category changes//
+  useEffect(() => {
+    const getData = async () => {
+      const selectedMovies(data.results[15]);
+      if (movieType === "In Theatres") {
+        const { data } = await tmdb.get("movie/top_rated?");
+        setMovies(data.results);
+        setSelectedMovies(data.results[15]);
+      } else if (movieType === "For Rent") {
+        const { data } = await tmdb.get("movie/now_playing?");
+        setMovies(data.results);
+      } else if (movieType === "Streaming") {
+        const { data } = await tmdb.get("movie/now_playing?");
+        setMovies(data.results);
+      } else if (movieType === "On TV") {
+        const { data } = await getTopRatedMovies();
+        setMovies(data.results);
+      }
+    };
+
+    getData();
+  }, [movieType]);
+
+  useEffect(() => {
+    const getData = async () => {
+      if (latest === "Movies") {
+        const { data } = await tmdb.get("movie/top_rated?");
+        setLatest(data.results);
+      } else if (latest === "TV") {
+        const { data } = await tmdb.get("movie/now_playing?");
+        setLatest(data.results);
+      }
+    };
+
+    getData();
+  }, [category01]);
+
+  const latestMovies = (m) =>
+  latest.map((m) => <MovieCard key={m.id} movie={m} />);
+
+  return (
+    <div className="api">
+      <div id="header">
+        <header className="headerListing" id="header-menu">
+          <li className="headerList">
+            What's Popular
+            <ul id="tabs">
+              {category.map((value) => {
+                return (
+                  <li>
+                    <button onClick={() => setMovieType(value)}>{value}</button>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+          <li className="headerList">
+            Free To Watch
+            <ul id="tabs">
+              {category01.map((value) => {
+                return (
+                  <li>
+                    <button onClick={() => setMovieType(value)}>{value}</button>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        </header>
+        <div className="search">
+          <form id="searchFrm">
+            <RiSearch2Line id="right-search" type="submit" />
+            <input type="text" placeholder="Lookup Movie..." />
+          </form>
+        </div>
+      </div>
+
+      <div
+        className="hero"
+        style={{
+          backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
+        }}
+      >
+        <div className="heroContent">
+          <h1>{selectedMovies.title}</h1>
+          <p>{selectedMovies.overview}</p>
+          <div className="buttons">
+            <button className={"moviePlay"}>Play Trailer</button>
+            <GoPlay id="play" />
+          </div>
+        </div>
+      </div>
+
+      <div className="container">{renderMovies(movies)}</div>
+    </div>
+  );
+};
+
+export default MovieList;
