@@ -1,139 +1,257 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-.container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 4.5rem;
-    width: 11rem;
-    margin-left: -1.5rem;
-    margin-right: -4rem;
-    border-radius: 8px;
-    margin-top: 3rem;
-    overflow: auto;
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 4.5rem;
+  width: 11rem;
+  margin-left: -1.5rem;
+  margin-right: -4rem;
+  border-radius: 8px;
+  margin-top: 3rem;
+  overflow: auto;
 }
 
-.container img{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 4.5rem;
-    height: 15rem;
-    margin-left: 0;
-    width: 11rem;
-    border-radius: 8px;
-    margin-right: -4rem;
-    margin-top: 3rem;
-    overflow: auto;
+.container img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 4.5rem;
+  height: 15rem;
+  margin-left: 0;
+  width: 11rem;
+  border-radius: 8px;
+  margin-right: -4rem;
+  margin-top: 3rem;
+  overflow: auto;
 }
 
-.hero h1{
-    margin: 18rem 0 18rem 7.5rem;
-    font-size: 50px;
-    font-weight: 800;
-    font-family: Poppins;
-    max-width: 60%;
+.hero h1 {
+  margin: 18rem 0 18rem 7.5rem;
+  font-size: 50px;
+  font-weight: 800;
+  font-family: Poppins;
+  max-width: 60%;
 }
 
-.hero p{
-    margin: -17.5rem 0 17.5rem 7.5rem;
-    font-size: 12px;
-    font-weight: 400;
-    font-family: Poppins;
-    max-width: 40%;
+.hero p {
+  margin: -17.5rem 0 17.5rem 7.5rem;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Poppins;
+  max-width: 40%;
 }
 
-.hero{
-    height: 70vh;
-    margin-top: -2.5rem;
-    margin-bottom: -65rem;
-    background-position: top center;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
+.hero {
+  height: 70vh;
+  margin-top: -2.5rem;
+  margin-bottom: -65rem;
+  background-position: top center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
 }
 
-.heroContent{
-    
-    color: var(--header-color);
+.heroContent {
+  color: var(--header-color);
 }
 
 .moviePlay {
-    color: var(--header-color);
-    background: linear-gradient(to right, rgba(159,79,107,100), rgba(182,77,94,100));
-    font-size: 14px;
-    font-weight: 600;
-    font-family: Poppins;
-    margin-top: -16rem;
-    margin-left: 7.5rem;
-    width: 9rem;
-    height: 2.5rem;
-    border-radius: 5px;
- }
+  color: var(--header-color);
+  background: linear-gradient(
+    to right,
+    rgba(159, 79, 107, 100),
+    rgba(182, 77, 94, 100)
+  );
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Poppins;
+  margin-top: -16rem;
+  margin-left: 7.5rem;
+  width: 9rem;
+  height: 2.5rem;
+  border-radius: 5px;
+}
 
-#play{
-    margin-left: 7.75rem;
-    margin-top: -15.6rem;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
+#play {
+  margin-left: 7.75rem;
+  margin-top: -15.6rem;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
 }
 
 /*===============HEADER================*/
-.header{
-    display: flex;
-    flex-direction: row-wrap;
-    border: none;
-    background: transparent;
-    margin-top: 22.6rem;
-    margin-left: -0.5rem;
+.header {
+  display: flex;
+  flex-direction: row-wrap;
+  border: none;
+  background: transparent;
+  margin-top: 22.6rem;
+  margin-left: -0.5rem;
 }
 
-.headerListing > .headerList{
+.headerListing > .headerList {
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 7rem;
+  margin-top: 44rem;
+  margin-bottom: -26.5rem;
+  background-color: none;
+}
+
+.headerListing li {
+  position: relative;
+  display: flex;
+  row-gap: 2px;
+}
+
+.headerList ul {
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  border: 2.5px solid var(--color-bg-variant);
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem;
+  margin-top: -0.1rem;
+  margin-left: 1rem;
+  height: 2.5rem;
+  background-color: none;
+}
+
+#tabs li button {
+  text-decoration: none;
+  color: var(--color-bg-variant);
+  display: flex;
+  padding: 0.1rem 0.3rem;
+  border-radius: 30px;
+  margin-left: 0.1rem;
+  transition: background-color 200ms ease-in-out;
+  background-color: transparent;
+}
+
+#tabs li {
+  list-style: none;
+  padding: 0.3rem 0rem;
+  border-radius: 30px;
+  transition: background-color 200ms ease-in-out;
+  margin-left: 0.1rem;
+}
+
+#tabs {
+  list-style: none;
+  font-weight: 700;
+  position: relative;
+  cursor: pointer;
+  border-radius: 30px;
+  align-items: center;
+  padding: 0.2rem 0 0.2rem 0;
+  margin-bottom: 2rem;
+  text-decoration: none;
+}
+
+#tabs > li button:active,
+#tabs > li button:focus {
+  display: flex;
+  flex-direction: row;
+  background: var(--color-bg-variant);
+  border-radius: 40px;
+  padding: 1.2rem 0.5rem;
+  color: var(--header-color);
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  transition: 200ms background-color ease-in-out;
+  gap: 0.5rem;
+  margin-left: -0.1rem;
+}
+
+/*===============END OF HEADER================*/
+
+/*===============TRENDING HEADER================*/
+.trailerVideos {
+  background-color: var(--color-bg-variant);
+  width: 83rem;
+  height: 20rem;
+  margin: 2rem 0 0 7.5rem;
+  border-radius: 8px;
+}
+
+.trendingListing {
+  display: flex;
+  flex-direction: row-wrap;
+  border: none;
+  background: transparent;
+  margin-top: 3.6rem;
+  margin-left: -0.5rem;
+  color: var(--header-color);
+}
+
+.trendingList{
     font-family: Poppins;
     font-size: 1.5rem;
-    font-weight: 700;  
-    margin-left: 7rem;
-    margin-top: 44rem;
-    margin-bottom: -26.5rem;
-    background-color: none;
-}
-
-.headerListing li{
-    position: relative;
-    display: flex;
-    row-gap: 2px;
-}
-
-.headerList ul{
-    font-size: .85rem;
     font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    border: 2.5px solid var(--color-bg-variant);
-    border-radius: 30px;
-    align-items: center;
-    justify-content: center;
-    padding: 0.1rem;
-    margin-top: -0.1rem;
     margin-left: 1rem;
-    height: 2.5rem;
-    background-color: none;
+    margin-top: 1rem;
+    background-color: transparent;
 }
 
-#tabs li button{
+.trendingListing li {
+  position: relative;
+  display: flex;
+  row-gap: 2px;
+}
+
+.trendingList ul {
+    font-family: Poppins;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  border: 2.5px solid var(--header-color);
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem;
+  margin-top: -0.1rem;
+  margin-left: 1rem;
+  height: 2.5rem;
+  background-color: transparent;
+  color: var(--header-color);
+}
+
+#trendsTab{
+  list-style: none;
+  font-weight: 700;
+  position: relative;
+  cursor: pointer;
+  border-radius: 30px;
+  align-items: center;
+  padding: 0.2rem 0 0.2rem 0;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+#trendsTab li button{
     text-decoration: none;
-    color: var(--color-bg-variant);
+    color: var(--header-color);
     display: flex;
     padding: 0.1rem 0.3rem;
     border-radius: 30px;
     margin-left: 0.1rem;
     transition: background-color 200ms ease-in-out;
     background-color: transparent;
-} 
+}
 
-#tabs li{
+#trendsTab li{
     list-style: none;
     padding: 0.3rem 0rem;
     border-radius: 30px;
@@ -141,79 +259,58 @@
     margin-left: 0.1rem;
 }
 
-#tabs{
-  list-style: none;
-  font-weight: 700;
-  position: relative;
-  cursor: pointer;
-  border-radius: 30px;
+#trendsTab > li button:active,
+#trendsTab > li button:focus {
+  display: flex;
+  flex-direction: row;
+  background: var(--header-color);
+  border-radius: 40px;
+  padding: 1.2rem 0.5rem;
+  color: var(--color-bg-variant);
+  height: 2rem;
+  justify-content: center;
   align-items: center;
-  padding: 0.2rem 0 0.2rem 0; 
-  margin-bottom: 2rem;
-  text-decoration: none;
-}
-
-#tabs > li button:active,
-#tabs > li button:focus{
-    display: flex;
-    flex-direction: row;
-    background: var(--color-bg-variant);
-    border-radius: 40px;
-    padding: 1.2rem 0.5rem;
-    color: var(--header-color);
-    height: 2rem;
-    justify-content: center;
-    align-items: center;
-    transition: 200ms background-color ease-in-out;
-    gap: 0.5rem;
-    margin-left: -0.1rem;
+  transition: 200ms background-color ease-in-out;
+  gap: 0.5rem;
+  margin-left: -0.1rem;
 }
 
 /*===============END OF HEADER================*/
 
 /*===============SEARCH================*/
-#searchFrm #right-search{
-    display: block;
-    align-items: center;
-    margin: -0.6rem 0 0 4.5rem;
-    font-size: 26px;
-    color: var(--color-bg-variant);  
-  }
+#searchFrm #right-search {
+  display: block;
+  align-items: center;
+  margin: -0.6rem 0 0 4.5rem;
+  font-size: 26px;
+  color: var(--color-bg-variant);
+}
 
-  #searchFrm input{
-    display: flex;
-    align-items: center;
-    height: 2.5rem;
-    width: 23rem;
-    margin: -2rem 0 0 -16rem;
-    font-family: Poppins;
-    font-size: 14px;
-    text-indent: 6%;
-    border-radius: 40px;
-    background: var(--header-color);
-    box-shadow: 0 0 10px var(--clr-gray300);
-  }
-  
-  
-  #searchFrm{
-    list-style: none;
-    font-weight: 600;
-    position: relative;
-    cursor: pointer;
-    padding: 3.5rem 1rem;
-    margin-left: -18rem;
-  }
-  
-  #searchFrm{
-    margin: -6.5rem 0 0 60rem;
-    
-  }
-  
-  /*===============END OF SEARCH================*/
+#searchFrm input {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  width: 23rem;
+  margin: -2rem 0 0 -16rem;
+  font-family: Poppins;
+  font-size: 14px;
+  text-indent: 6%;
+  border-radius: 40px;
+  background: var(--header-color);
+  box-shadow: 0 0 10px var(--clr-gray300);
+}
 
+#searchFrm {
+  list-style: none;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  padding: 3.5rem 1rem;
+  margin-left: -18rem;
+}
 
+#searchFrm {
+  margin: -6.5rem 0 0 60rem;
+}
 
-
-
-
-
+/*===============END OF SEARCH================*/

@@ -43,13 +43,6 @@ render() {
           {this.state.avatarMenu.map(avatarMenu => <li>{avatarMenu}
         </li>)}</ul>
         </li>
-
-        
-          {/* <RiSearch2Line id='right-search'/> */}
-        {/* <form id='searchFrm'>
-          <button type='Submit'>Search</button>
-            <input type="text" placeholder='Lookup Movie...' />
-        </form> */}
        
         </div>        
         </div>

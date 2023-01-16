@@ -74,6 +74,7 @@
   position: relative;
   cursor: pointer;
   padding: 1.5rem 1rem;
+  margin-left: -0.5rem;
 }
 
 .nav-item-drop li{
@@ -162,7 +163,7 @@ li{
   top: 2.5rem;
   left: 1.5rem;
   border: 2px solid var(--clr-gray300);
-  background-color: var(--clr-gray150);
+  background-color: var(--header-color);
   border-radius: var(--radius);
   width: 10.5rem;
   padding: 1rem;
@@ -187,44 +188,4 @@ li{
   margin-top: -0.5rem;
 }
 
-/* #searchFrm button{
-  margin: -0.1rem 0 0 -1rem;
-  width: 5rem;
-  height: 2.5rem;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: Poppins;
-  background: linear-gradient(to right, rgba(159,79,107,100), rgba(182,77,94,100));
-  color: var(--header-color);  
-  border-radius: 30px;
-}
 
-#searchFrm input{
-  display: flex;
-  align-items: center;
-  height: 2.5rem;
-  width: 18rem;
-  margin: -2.5rem 0 0 -14rem;
-  font-family: Poppins;
-  font-size: 14px;
-  text-indent: 6%;
-  border-radius: 30px;
-  box-shadow: 0 0 10px var(--clr-gray300);
-}
-
-
-#searchFrm{
-  list-style: none;
-  font-weight: 600;
-  position: relative;
-  cursor: pointer;
-  padding: 3.5rem 1rem;
-  margin-left: -18rem;
-}
-
-#searchFrm{
-  margin: -4.2rem 0 0 -30rem;
-  
-}
-  
- */

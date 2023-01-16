@@ -20,6 +20,7 @@ const MovieList = () => {
   const [searchKey, setSearch] = useState([]);
   const [movieType, setMovieType] = useState("Streaming");
   const [selectedMovies, setSelectedMovies] = useState([]);
+  const [trending, setTrendingMovies] = useState([]);
   const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
   const category01 = ["Movies", "TV"];
   const category02 = ["Today", "Trending"];
@@ -69,6 +70,20 @@ const MovieList = () => {
   const latestMovies = (movie) =>
     latest.map((movie) => <MovieCard key={movie.id} movie={movie} />);
 
+  useEffect(() => {
+    const getTrendingData = async () => {
+      if (movieType === "Movies") {
+        const { data } = await getMovies();
+        setLatest(data.results);
+      } else if (movieType === "TV") {
+        const { data } = await getTV();
+        setLatest(data.results);
+      }
+    };
+
+    getTrendingData();
+  }, [movieType]);
+
   const searchMovie = (lookup) => {
     if (lookup.key === "Enter") {
       console.log("hello");
@@ -90,22 +105,22 @@ const MovieList = () => {
         </form>
 
         <div
-        className="hero"
-        style={{
-          backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
-        }}
-      >
-        <div className="heroContent">
-          <h1>{selectedMovies.title}</h1>
-          <p>{selectedMovies.overview}</p>
-          <div className="buttons">
-            <button className={"moviePlay"}>Play Trailer</button>
-            <GoPlay id="play" />
+          className="hero"
+          style={{
+            backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
+          }}
+        >
+          <div className="heroContent">
+            <h1>{selectedMovies.title}</h1>
+            <p>{selectedMovies.overview}</p>
+            <div className="buttons">
+              <button className={"moviePlay"}>Play Trailer</button>
+              <GoPlay id="play" />
+            </div>
           </div>
         </div>
       </div>
-      </div>
-    
+
       <div className="header">
         <header className="headerListing" id="header-menu">
           <li className="headerList">
@@ -136,11 +151,25 @@ const MovieList = () => {
         </header>
       </div>
 
-
       <div className="container">{renderMovies(movies)}</div>
       <div className="container">{latestMovies(latest)}</div>
 
-      <div className="trailerVideos"></div>
+      <div className="trailerVideos">
+        <header className="trendingListing">
+          <li className="trendingList">
+            Trending Today
+            <ul id="trendsTab">
+              {category02.map((value) => {
+                return (
+                  <li>
+                    <button onClick={() => setMovieType(value)}>{value}</button>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        </header>
+      </div>
     </div>
   );
 };
