@@ -23,3 +23,11 @@ export function getMovies() {
 export function getTV() {
   return tmdb.get("/tv/airing_today?");
 }
+
+export function getTrendingMovies() {
+  return tmdb.get("movie/297762/videos?");
+}
+
+export function getTrendingToday() {
+  return tmdb.get("trending/all/day?");
+}

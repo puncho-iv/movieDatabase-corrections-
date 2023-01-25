@@ -10,6 +10,8 @@ import {
   getMoviesForRent,
   getStreamingMovies,
   getTopRatedMovies,
+  getTrendingMovies,
+  getTrendingToday,
   getTV,
 } from "../api/moviesService";
 
@@ -72,17 +74,22 @@ const MovieList = () => {
 
   useEffect(() => {
     const getTrendingData = async () => {
-      if (movieType === "Movies") {
-        const { data } = await getMovies();
-        setLatest(data.results);
-      } else if (movieType === "TV") {
-        const { data } = await getTV();
-        setLatest(data.results);
+      if (movieType === "Today") {
+        const { data } = await getTrendingMovies();
+        setTrendingMovies(data.results);
+        // setSelectedMovies(data.results[5]);
+      } else if (movieType === "Trending") {
+        const { data } = await getTrendingToday();
+        setTrendingMovies(data.results);
+        setSelectedMovies(data.results[5]);
       }
     };
 
     getTrendingData();
   }, [movieType]);
+
+  const trendingMovies = (movie) =>
+    trending.map((movie) => <MovieCard key={movie.id} movie={movie} />);
 
   const searchMovie = (lookup) => {
     if (lookup.key === "Enter") {
@@ -170,6 +177,16 @@ const MovieList = () => {
           </li>
         </header>
       </div>
+      <div
+        className="trendsContainer"
+        style={{
+          backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
+        }}
+      >
+        <div className="imageOverlay">
+        <div className="trends">{trendingMovies(trending)}</div>
+      </div>
+    </div>
     </div>
   );
 };

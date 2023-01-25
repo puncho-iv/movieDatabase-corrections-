@@ -1,18 +1,180 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #reset {
-    --button-width: 280px;
-    --button-img: 100px;
-    --textbox-width: 100rem;
-    --button: 20rem;
-    
+  --button-width: 280px;
+  --button-img: 100px;
+  --textbox-width: 100rem;
+  --button: 20rem;
 }
 
-.reset_container img{
+.reset_container {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.reset_container img {
+  width: 6rem;
+  height: 6rem;
+  margin-top: -22.5rem;
+  margin-left: -59.5rem;
+}
+
+.reset_container h3 {
+  margin: -10rem 0 0 56rem;
+  font-family: Poppins;
+  font-weight: 700;
+}
+
+.reset-image img {
+  width: 50%;
+  height: 70vh;
+  margin-top: -19.5rem;
+  margin-left: 5rem;
+}
+
+.reset-content h1 {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0.5rem 0 0 5rem;
+}
+
+#reset_header {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  margin: -5.5rem 0 0 55.5rem;
+}
+
+.reset-content p {
+  margin: 0 0 0 5rem;
+}
+
+.resetForm {
+  margin: -22rem 0 0 57.5rem;
+}
+
+.resetPass {
+  margin: -18rem 0 0 57.5rem;
+}
+
+.resetLabel {
+  margin: -28rem 0 8rem -7rem;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--color-dark);
+  border-radius: 8px;
+  font-family: Poppins;
+}
+
+.reset-input {
+  display: flex;
+  border: 1px solid var(--color-dark);
+  padding: 8px;
+  border-radius: 5px;
+  margin: -7rem 0 1rem -7rem;
+  width: 20rem;
+  text-indent: 7%;
+}
+
+.resetinput{
+  display: flex;
+  border: 1px solid var(--color-dark);
+  padding: 8px;
+  border-radius: 5px;
+  margin: -7.2rem 0 1rem -7rem;
+  width: 20rem;
+  text-indent: 7%;
+}
+
+.reset-btn {
+  background: linear-gradient(
+    to right,
+    rgba(159, 79, 107, 100),
+    rgba(182, 77, 94, 100)
+  );
+  padding: 0.5rem 1rem;
+  color: var(--header-color);
+  border-radius: 3px;
+  width: 10rem;
+  height: 3rem;
+  transition: outline 200ms;
+  margin-top: 2rem;
+  margin-left: 0rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.reset-password {
+  margin: 7.3rem 0 8rem -7rem;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--color-dark);
+  border-radius: 8px;
+  font-family: Poppins;
+}
+
+.reset-btn2 {
+  background: linear-gradient(
+    to right,
+    rgba(159, 79, 107, 100),
+    rgba(182, 77, 94, 100)
+  );
+  padding: 0.5rem 1rem;
+  color: var(--header-color);
+  border-radius: 3px;
+  width: 10rem;
+  height: 3rem;
+  transition: outline 200ms;
+  margin-top: 2rem;
+  margin-left: -7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#resetLink{
+  text-decoration: none;
+  color: var(--header-color);
+  margin-top: -2rem;
+}
+
+#resetEmail{
+  margin: -11.8rem 0 0 -6.5rem;
+}
+
+#resetError{
+  color: #ff6774;
+  margin-left: -1.5rem;
+  margin-top: -20.1rem;
+  margin-bottom: 10rem;
+  font-size: 12px; 
+  z-index: 1;  
+}
+
+.reset-col2{
+  flex-basis: 50%;
+  flex-grow: 1;
+  padding: 50px 80px;
+}
+
+#Footer{
+  margin-top: 3rem;
+}
+
+
+/* .reset_container img{
     height: 70px;
     width: 70px;   
     margin: -11rem 0 0 10rem;
@@ -119,9 +281,7 @@
   color: #ffff;
 }
 
-#Footer{
-  margin-top: 9rem;
-}
+
 
 #resetError{
   color: #ff6774;
@@ -151,4 +311,4 @@
 
 
 
-
+ */

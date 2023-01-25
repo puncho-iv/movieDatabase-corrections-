@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+/*===============CONTAINERS================*/
 .container {
   display: flex;
   flex-direction: row;
@@ -27,6 +28,60 @@
   overflow: auto;
 }
 
+/* .trends{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 11.5rem;
+    width: 60rem;
+    margin-left: 25rem;
+    
+    border-radius: 8px;
+    margin-top: 10rem;
+    margin-bottom: -15rem;
+    overflow: auto;
+}
+
+.trends img{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 4.5rem;
+    height: 15rem;
+    margin-left: -20rem;
+    width: 11rem;
+    border-radius: 8px;
+    margin-right: -4rem;
+    margin-top: 10rem;
+    margin-bottom: -15rem;
+    overflow: auto;
+} */
+
+.trendsContainer {
+    height: 44.9vh;
+    width: 85rem;
+    margin-top: -20rem;
+    margin-bottom: 2.5rem;
+    margin-left: 5.5rem;
+    background-position: top center;
+    border-radius: 8px;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    z-index: -1;
+  }
+
+  .imageOverlay{
+    background-color: rgba(255, 166, 0, 0.519);
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  /*===============END OF CONTAINERS================*/
+  
+
+  /*===============HERO================*/
 .hero h1 {
   margin: 18rem 0 18rem 7.5rem;
   font-size: 50px;
@@ -81,6 +136,7 @@
   display: flex;
   align-items: center;
 }
+/*===============END OF HERO================*/
 
 /*===============HEADER================*/
 .header {
@@ -181,6 +237,7 @@
   height: 20rem;
   margin: 2rem 0 0 7.5rem;
   border-radius: 8px;
+  z-index: 1;
 }
 
 .trendingListing {
@@ -193,13 +250,13 @@
   color: var(--header-color);
 }
 
-.trendingList{
-    font-family: Poppins;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-left: 1rem;
-    margin-top: 1rem;
-    background-color: transparent;
+.trendingList {
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  background-color: transparent;
 }
 
 .trendingListing li {
@@ -209,7 +266,7 @@
 }
 
 .trendingList ul {
-    font-family: Poppins;
+  font-family: Poppins;
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
@@ -227,7 +284,7 @@
   color: var(--header-color);
 }
 
-#trendsTab{
+#trendsTab {
   list-style: none;
   font-weight: 700;
   position: relative;
@@ -240,23 +297,23 @@
   background-color: transparent;
 }
 
-#trendsTab li button{
-    text-decoration: none;
-    color: var(--header-color);
-    display: flex;
-    padding: 0.1rem 0.3rem;
-    border-radius: 30px;
-    margin-left: 0.1rem;
-    transition: background-color 200ms ease-in-out;
-    background-color: transparent;
+#trendsTab li button {
+  text-decoration: none;
+  color: var(--header-color);
+  display: flex;
+  padding: 0.1rem 0.3rem;
+  border-radius: 30px;
+  margin-left: 0.1rem;
+  transition: background-color 200ms ease-in-out;
+  background-color: transparent;
 }
 
-#trendsTab li{
-    list-style: none;
-    padding: 0.3rem 0rem;
-    border-radius: 30px;
-    transition: background-color 200ms ease-in-out;
-    margin-left: 0.1rem;
+#trendsTab li {
+  list-style: none;
+  padding: 0.3rem 0rem;
+  border-radius: 30px;
+  transition: background-color 200ms ease-in-out;
+  margin-left: 0.1rem;
 }
 
 #trendsTab > li button:active,

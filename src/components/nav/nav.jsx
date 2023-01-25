@@ -3,7 +3,6 @@ import './nav.css'
 import logo from '../../images/logo.svg'
 import {HiUserCircle} from 'react-icons/hi'
 import {BsFillBellFill} from 'react-icons/bs'
-import {RiSearch2Line} from 'react-icons/ri'
 import {GrFormAdd} from 'react-icons/gr'
 
 class Nav extends Component{
@@ -43,7 +42,6 @@ render() {
           {this.state.avatarMenu.map(avatarMenu => <li>{avatarMenu}
         </li>)}</ul>
         </li>
-       
         </div>        
         </div>
   
