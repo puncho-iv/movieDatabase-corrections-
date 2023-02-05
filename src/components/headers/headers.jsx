@@ -2,14 +2,14 @@
 // import './headers.css'
 
 // class Header extends Component {
-//   state = { 
+//   state = {
 //     whatsPopular: [ "Streaming", "On TV", "For Rent", "In Theatres" ],
 //     freeToWatch: [ "Movies", "TV"],
 //     latestTrailers: ["Streaming", "On TV", "For Rent", "In Theatres" ],
 //     trending: ["Today", "This Week"]
-//    } 
+//    }
 
-//   render() { 
+//   render() {
 
 //     return (
 //       <section id='header'>
@@ -28,36 +28,34 @@
 //     );
 //   }
 // }
- 
+
 // export default Header;
 
-import React, { useState } from 'react'
-import './headers.css'
-import {Link} from 'react-router-dom'
+import React, { useState } from "react";
+import "./headers.css";
+import { Link } from "react-router-dom";
 
-const headers = ["Streaming", "On TV", "For Rent", "In Theatres"]
+const headers = ["Streaming", "On TV", "For Rent", "In Theatres"];
 
 const Header = () => {
   return (
-    <section id='header'>
-      <header className='headerListing' id='header-menu'>
-        <li className='headerList'>What's Popular
-        <ul id='tabs'>
-
-          {
-            headers.map((value) => {
-              return(
-                <li><Link to="">{value}</Link></li>
-              )
-            })
-          }
+    <section id="header">
+      <header className="headerListing" id="header-menu">
+        <li className="headerList">
+          What's Popular
+          <ul id="tabs">
+            {headers.map((value) => {
+              return (
+                <li>
+                  <Link to="">{value}</Link>
+                </li>
+              );
+            })}
           </ul>
         </li>
       </header>
-
     </section>
-  )
-}
+  );
+};
 
-export default Header
- 
+export default Header;

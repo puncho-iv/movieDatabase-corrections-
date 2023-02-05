@@ -1,55 +1,69 @@
-import React, {Component} from 'react'
-import './nav.css'
-import logo from '../../images/logo.svg'
-import {HiUserCircle} from 'react-icons/hi'
-import {BsFillBellFill} from 'react-icons/bs'
-import {GrFormAdd} from 'react-icons/gr'
+import React, { Component } from "react";
+import "./nav.css";
+import logo from "../../images/logo.svg";
+import { HiUserCircle } from "react-icons/hi";
+import { BsFillBellFill } from "react-icons/bs";
+import { GrFormAdd } from "react-icons/gr";
 
-class Nav extends Component{
-  state={
+class Nav extends Component {
+  state = {
     menuItems: ["Action", "Romance", "Sci-Fi"],
     moreMenu: ["Uploads", "Downloads", "Settings"],
-    avatarMenu: ["Change User", "Settings", "Edit Profile", "WatchList", "Logout"]
+    avatarMenu: [
+      "Change User",
+      "Settings",
+      "Edit Profile",
+      "WatchList",
+      "Logout",
+    ],
   };
-  
-render() {
-  return (
-   <section id='nav'>
 
-    <div className="nav-left-signup">
-      <div className="nav-logo">
-        <img src={logo} alt="logo"/>
-      </div>
+  render() {
+    return (
+      <section id="nav">
+        <div className="nav-left-signup">
+          <div className="nav-logo">
+            <img src={logo} alt="logo" />
+          </div>
 
-      <nav className='nav' id='nav-menu'>
-        <li className='nav-list'>Home</li>
-        <li className='nav-list'>Movies 
-        <ul className='nav-item-drop'>{this.state.menuItems.map(menuItems => <li>{menuItems}</li>)}</ul>
-        </li>         
-        <li className='nav-list'>More
-        <ul className='nav-item-drop'>{this.state.moreMenu.map(moreMenu => <li>{moreMenu}</li>)}</ul>
-        </li>      
-      </nav>
+          <nav className="nav" id="nav-menu">
+            <li className="nav-list">Home</li>
+            <li className="nav-list">
+              Movies
+              <ul className="nav-item-drop">
+                {this.state.menuItems.map((menuItems) => (
+                  <li>{menuItems}</li>
+                ))}
+              </ul>
+            </li>
+            <li className="nav-list">
+              More
+              <ul className="nav-item-drop">
+                {this.state.moreMenu.map((moreMenu) => (
+                  <li>{moreMenu}</li>
+                ))}
+              </ul>
+            </li>
+          </nav>
 
-      <div className="avatar" >  
-        <GrFormAdd id='addUploads'/>
+          <div className="avatar">
+            <GrFormAdd id="addUploads" />
 
-         <BsFillBellFill id='right-avatar'/>
-        
-        <li id='avatar-shape'>
-          <HiUserCircle id='right-avatar'/>
-         <ul className='nav-item-drop'>
-          {this.state.avatarMenu.map(avatarMenu => <li>{avatarMenu}
-        </li>)}</ul>
-        </li>
-        </div>        
+            <BsFillBellFill id="right-avatar" />
+
+            <li id="avatar-shape">
+              <HiUserCircle id="right-avatar" />
+              <ul className="nav-item-drop">
+                {this.state.avatarMenu.map((avatarMenu) => (
+                  <li>{avatarMenu}</li>
+                ))}
+              </ul>
+            </li>
+          </div>
         </div>
-  
-   </section>
-  )
+      </section>
+    );
+  }
 }
-}
 
-
-
-export default Nav
+export default Nav;

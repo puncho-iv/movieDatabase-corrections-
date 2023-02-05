@@ -1,7 +1,7 @@
 import React from 'react'
-import Nav from '../nav/nav'
 
-const movieDetails = () => {
+
+const MovieDetails = () => {
   return (
     <div>
       
@@ -9,4 +9,4 @@ const movieDetails = () => {
   )
 }
 
-export default movieDetails
+export default MovieDetails

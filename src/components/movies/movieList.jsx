@@ -36,7 +36,7 @@ const MovieList = () => {
       if (movieType === "In Theatres") {
         const { data } = await getInTheatres();
         setMovies(data.results);
-        setSelectedMovies(data.results[5]);
+        setSelectedMovies(data.results[1]);
       } else if (movieType === "For Rent") {
         const { data } = await getMoviesForRent();
         setMovies(data.results);
@@ -44,7 +44,7 @@ const MovieList = () => {
       } else if (movieType === "Streaming") {
         const { data } = await getStreamingMovies();
         setMovies(data.results);
-        setSelectedMovies(data.results[8]);
+        setSelectedMovies(data.results[6]);
       } else if (movieType === "On TV") {
         const { data } = await getTopRatedMovies();
         setMovies(data.results);
@@ -100,7 +100,7 @@ const MovieList = () => {
   return (
     <div className="api">
       <div className="search">
-        <form id="searchFrm">
+        <form id="searchFrm" onSubmit={searchMovie}>
           <RiSearch2Line id="right-search" type="submit" />
           <input
             type="text"
@@ -110,6 +110,7 @@ const MovieList = () => {
             onClick={searchMovie}
           />
         </form>
+        {searchKey}
 
         <div
           className="hero"
@@ -120,13 +121,13 @@ const MovieList = () => {
           <div className="heroContent">
             <h1>{selectedMovies.title}</h1>
             <p>{selectedMovies.overview}</p>
+            </div>
             <div className="buttons">
               <button className={"moviePlay"}>Play Trailer</button>
               <GoPlay id="play" />
             </div>
           </div>
-        </div>
-      </div>
+        </div>     
 
       <div className="header">
         <header className="headerListing" id="header-menu">
@@ -184,9 +185,9 @@ const MovieList = () => {
         }}
       >
         <div className="imageOverlay">
-        <div className="trends">{trendingMovies(trending)}</div>
+          <div className="trends">{trendingMovies(trending)}</div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

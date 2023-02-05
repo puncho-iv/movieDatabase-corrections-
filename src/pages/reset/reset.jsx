@@ -18,16 +18,11 @@ function Reset() {
     console.log(data);
   };
 
-  //  const [isState, setIsState] = useState(false)
+  const [resetPass, setResetPass] = useState(false);
 
-  //  {isState && <Resetpassword/>}
-
-  //  onClick=.
-  //  {() => setIsState(!isState)}
-
-  //  const handleClick = event => {
-
-  //   setIsState(current => !current);
+  const resetPassfrm = () => {
+    setResetPass(!resetPass)
+  }
 
   return (
     <section id="reset">
@@ -40,7 +35,7 @@ function Reset() {
         <img src={resetImage} alt="reset-img" className="reset-image-column" />
         <div className="reset-content">
           <h1>Don't get logged out again</h1>
-          <p>Lorem ipsum..</p>
+          <p>Lorem ipsum..</p>  
         </div>
       </div>
 
@@ -61,11 +56,10 @@ function Reset() {
           {errors.email?.type === "required" && "*Email is required"}
         </error>
 
-        <button className="reset-btn">Next</button>
+        <button className="reset-btn" onClick={resetPassfrm}>Next</button>
       </form>
-
-      {/* {isState && <resetForm/>}  */}
       
+      {resetPass && (
       <form className="resetPass" onSubmit={handleSubmit(onSubmit)}>
         <label className="reset-password">Password</label>
         <input
@@ -89,7 +83,8 @@ function Reset() {
           </Link>
         </button>
       </form>
-      </div>
+      )}
+      </div> 
       <Footer />
     </section>
   );

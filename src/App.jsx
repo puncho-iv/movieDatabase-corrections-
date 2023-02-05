@@ -5,6 +5,7 @@ import Signin from './pages/signin/signIn'
 import Reset from './pages/reset/reset'
 import Subscription from './pages/subscription/subscription'
 import MovieList from './components/movies/movieList'
+import MovieDetails from './components/movieDetails/movieDetails'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/reset" element={<Reset />} />   
         <Route path="/subscription" element={<Subscription />} /> 
         <Route path="/movieList" element={<MovieList />} /> 
+        <Route path="/movieDetails/:id" element={<MovieDetails />} />
       </Routes>
     </BrowserRouter>
     

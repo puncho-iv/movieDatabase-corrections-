@@ -39,14 +39,14 @@ function Signin() {
         <img src={logo} alt="logo" />
 
         <div className="links">
-        <Link to="/signup" className="sign-up-link">
-          New User?
-          <em> Sign up now</em>
-        </Link>
+          <Link to="/signup" className="sign-up-link">
+            New User?
+            <em> Sign up now</em>
+          </Link>
         </div>
-       
+
         <div className="signin-content">
-        <img src={asset} alt="signin-left-pane" className="left-column-img" />
+          <img src={asset} alt="signin-left-pane" className="left-column-img" />
           <h1>Come in and see all the new movies...</h1>
           <p>Lorem ipsum..</p>
         </div>
@@ -59,8 +59,8 @@ function Signin() {
             noValidate
             autoComplete="off"
           >
-          <div className="user_details">
-           <label className="signin-label">EMAIL ADDRESS</label>
+            <div className="user_details">
+              <label className="signin-label">EMAIL ADDRESS</label>
               <input
                 className="user-input"
                 type="email"
@@ -74,35 +74,33 @@ function Signin() {
               <error id="error">
                 {errors.email?.type === "required" && "*Enter email address"}
               </error>
-              </div>
-           
-           <label className="signin-label2">PASSWORD</label>
-              <input
-                className="user-input1"
-                type={type}
-                name="newPassword"
-                placeholder="Enter your password..."
-                {...register("newPassword", {
-                  required: true,
-                  minLength: 5,
-                  maxLength: 20,
-                })}
-              />
-              <RiLockPasswordFill className="password_image" />
-              <span id="pwd_eye" onClick={handleToggle}>
-                <AiFillEye icon={icon} size={18} />
-              </span>
+            </div>
 
-              {/* <button className='eye' onClick={toggleBtn}>
+            <label className="signin-label2">PASSWORD</label>
+            <input
+              className="user-input1"
+              type={type}
+              name="newPassword"
+              placeholder="Enter your password..."
+              {...register("newPassword", {
+                required: true,
+                minLength: 5,
+                maxLength: 20,
+              })}
+            />
+            <RiLockPasswordFill className="password_image" />
+            <span id="pwd_eye" onClick={handleToggle}>
+              <AiFillEye icon={icon} size={18} />
+            </span>
+
+            {/* <button className='eye' onClick={toggleBtn}>
                 {state ? <AiFillEye />:<AiFillEyeInvisible/>}
               </button> */}
 
-              <error id="new">
-                {errors.newPassword?.type === "required" &&
-                  "*Enter your password"}
-              </error>
-           
-           
+            <error id="new">
+              {errors.newPassword?.type === "required" &&
+                "*Enter your password"}
+            </error>
 
             <div className="bottom">
               <h3 id="remember">Remember me</h3>
@@ -116,11 +114,13 @@ function Signin() {
             </div>
 
             <div>
-              <button className="button-signin" Link to="/home" type="submit" >Submit</button>
+              <button className="button-signin" Link to="/home" type="submit">
+                Submit
+              </button>
             </div>
           </form>
         </div>
-     </div>
+      </div>
     </section>
   );
 }

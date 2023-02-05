@@ -70,7 +70,12 @@
 }
 
 .custom-btn:hover {
-    outline: 4px solid var(--color-hover);
+    background: transparent;
+    outline: 4px solid var(--header-color);
+}
+
+.custom-btn > .custom-btn-text:hover{
+    color: var(--header-color);
 }
 
 #apple-signin-btn,
@@ -80,7 +85,7 @@
 }
 
 #apple-signin-btn > .custom-btn-img{
-    margin-left: -1.5rem;
+    margin-left: -2.5rem;
 }
 
 #mobile-signin-btn > .custom-btn-text{

@@ -26,6 +26,7 @@
   margin-right: -4rem;
   margin-top: 3rem;
   overflow: auto;
+  border: 1px solid rgb(99, 99, 99);
 }
 
 /* .trends{
@@ -61,7 +62,7 @@
     height: 44.9vh;
     width: 85rem;
     margin-top: -20rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 12.5rem;
     margin-left: 5.5rem;
     background-position: top center;
     border-radius: 8px;
@@ -82,16 +83,16 @@
   
 
   /*===============HERO================*/
-.hero h1 {
-  margin: 18rem 0 18rem 7.5rem;
-  font-size: 50px;
+.heroContent h1 {
+  margin: 18rem 0 13rem 7.5rem;
+  font-size: 40px;
   font-weight: 800;
   font-family: Poppins;
   max-width: 60%;
 }
 
-.hero p {
-  margin: -17.5rem 0 17.5rem 7.5rem;
+.heroContent p {
+  margin: -12.5rem 0 8.5rem 7.5rem;
   font-size: 12px;
   font-weight: 400;
   font-family: Poppins;
@@ -124,18 +125,26 @@
   font-family: Poppins;
   margin-top: -16rem;
   margin-left: 7.5rem;
+  margin-right: 10rem;
   width: 9rem;
   height: 2.5rem;
   border-radius: 5px;
 }
 
 #play {
-  margin-left: 7.75rem;
-  margin-top: -15.6rem;
+  color: var(--header-color);
+  margin: -15.6rem 26rem 0 -18.75rem ;
   font-size: 25px;
   display: flex;
   align-items: center;
 }
+
+.buttons{
+  display: flex;
+  margin: 10rem 60.5rem -9rem -60.5rem;
+}
+
+
 /*===============END OF HERO================*/
 
 /*===============HEADER================*/
@@ -371,3 +380,6 @@
 }
 
 /*===============END OF SEARCH================*/
+
+
+
