@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./movieCard";
+import VideoCard from "../videos/videoCard";
 import "./movieList.css";
 import { GoPlay } from "react-icons/go";
-import { Link } from "react-router-dom";
+import YouTube from "react-youtube";
 import { RiSearch2Line } from "react-icons/ri";
 import {
   getInTheatres,
@@ -21,14 +22,18 @@ const MovieList = () => {
   const [latest, setLatest] = useState([]);
   const [searchKey, setSearch] = useState([]);
   const [movieType, setMovieType] = useState("Streaming");
+  const [freeToWatch, setFreeToWatch] = useState("Movies");
   const [selectedMovies, setSelectedMovies] = useState([]);
   const [trending, setTrendingMovies] = useState([]);
+  const [videos, setVideos] = useState("Today");
   const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
   const category01 = ["Movies", "TV"];
   const category02 = ["Today", "Trending"];
 
   const renderMovies = (movie) =>
-    movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
+    movies.map((movie) => (
+      <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
+    ));
 
   //category changes//
   useEffect(() => {
@@ -55,41 +60,51 @@ const MovieList = () => {
     getData();
   }, [movieType]);
 
+  const latestMovies = (movie) =>
+    latest.map((movie) => (
+      <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
+    ));
+
   useEffect(() => {
     const getSecondData = async () => {
-      if (movieType === "Movies") {
+      if (freeToWatch === "Movies") {
         const { data } = await getMovies();
         setLatest(data.results);
-      } else if (movieType === "TV") {
+      } else if (freeToWatch === "TV") {
         const { data } = await getTV();
         setLatest(data.results);
       }
     };
 
     getSecondData();
-  }, [movieType]);
+  }, [freeToWatch]);
 
-  const latestMovies = (movie) =>
-    latest.map((movie) => <MovieCard key={movie.id} movie={movie} />);
+  const selectMovie = async (movie) => {
+    const data =  trendingMovies(movie.id);
+    console.log('movie data', data);
+    setSelectedMovies(movie);
+  };
 
   useEffect(() => {
-    const getTrendingData = async () => {
-      if (movieType === "Today") {
+    trendingMovies()
+  }, [])
+
+  const trendingMovies = (movie) =>
+    trending.map((movie) => <VideoCard key={movie.id} movie={movie} />);
+
+  useEffect(() => {
+    const getTrendingData = async (id) => {
+      if (videos === "Today") {
         const { data } = await getTrendingMovies();
         setTrendingMovies(data.results);
-        // setSelectedMovies(data.results[5]);
-      } else if (movieType === "Trending") {
+      } else if (videos === "Trending") {
         const { data } = await getTrendingToday();
         setTrendingMovies(data.results);
-        setSelectedMovies(data.results[5]);
       }
     };
 
     getTrendingData();
-  }, [movieType]);
-
-  const trendingMovies = (movie) =>
-    trending.map((movie) => <MovieCard key={movie.id} movie={movie} />);
+  }, [videos]);
 
   const searchMovie = (lookup) => {
     if (lookup.key === "Enter") {
@@ -118,16 +133,17 @@ const MovieList = () => {
             backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
           }}
         >
+          <YouTube />
           <div className="heroContent">
             <h1>{selectedMovies.title}</h1>
             <p>{selectedMovies.overview}</p>
-            </div>
-            <div className="buttons">
-              <button className={"moviePlay"}>Play Trailer</button>
-              <GoPlay id="play" />
-            </div>
           </div>
-        </div>     
+          <div className="buttons">
+            <button className={"moviePlay"}>Play Trailer</button>
+            <GoPlay id="play" />
+          </div>
+        </div>
+      </div>
 
       <div className="header">
         <header className="headerListing" id="header-menu">
@@ -150,7 +166,9 @@ const MovieList = () => {
               {category01.map((value) => {
                 return (
                   <li>
-                    <button onClick={() => setMovieType(value)}>{value}</button>
+                    <button onClick={() => setFreeToWatch(value)}>
+                      {value}
+                    </button>
                   </li>
                 );
               })}
@@ -170,7 +188,7 @@ const MovieList = () => {
               {category02.map((value) => {
                 return (
                   <li>
-                    <button onClick={() => setMovieType(value)}>{value}</button>
+                    <button onClick={() => setVideos(value)}>{value}</button>
                   </li>
                 );
               })}

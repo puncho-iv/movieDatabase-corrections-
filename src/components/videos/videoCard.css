@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ #videoplay{
+    z-index: 1;
+    color: var(--header-color);
+    margin-top: -5rem;
+    margin-bottom: 7rem;
+    font-size: 5rem;
+}
+

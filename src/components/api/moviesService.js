@@ -5,19 +5,19 @@ export function getTopRatedMovies() {
 }
 
 export function getStreamingMovies() {
-  return tmdb.get("movie/now_playing?");
+  return tmdb.get("/movie/now_playing?");
 }
 
 export function getMoviesForRent() {
-  return tmdb.get("movie/popular?");
+  return tmdb.get("/movie/popular?");
 }
 
 export function getInTheatres() {
-  return tmdb.get("movie/upcoming?");
+  return tmdb.get("/movie/upcoming?");
 }
 
 export function getMovies() {
-  return tmdb.get("movie/top_rated?");
+  return tmdb.get("/movie/top_rated?");
 }
 
 export function getTV() {
@@ -25,9 +25,13 @@ export function getTV() {
 }
 
 export function getTrendingMovies() {
-  return tmdb.get("movie/297762/videos?");
+  return tmdb.get("/trending/all/day?");
 }
 
 export function getTrendingToday() {
-  return tmdb.get("trending/all/day?");
+  return tmdb.get("/tv/{tv_id}/season/{season_number}/videos?");
 }
+
+// export function getFetchMovies() {
+//   return tmdb.get ("/movie/{movie_id}/videos?")
+// }

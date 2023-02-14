@@ -7,6 +7,7 @@ export default axios.create({
     },
     params:{
         api_key:'41467446ef4c8f2ffa78fc5c6692fbd5',
+        append_to_response: 'videos'
     }
 
 })
