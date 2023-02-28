@@ -133,15 +133,17 @@ const MovieList = () => {
             backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
           }}
         >
-          <YouTube />
+          
           <div className="heroContent">
-            <h1>{selectedMovies.title}</h1>
+            <h3>{selectedMovies.title}</h3>
             <p>{selectedMovies.overview}</p>
           </div>
           <div className="buttons">
             <button className={"moviePlay"}>Play Trailer</button>
             <GoPlay id="play" />
           </div>
+
+          <button id="later">Watch Later</button>
         </div>
       </div>
 

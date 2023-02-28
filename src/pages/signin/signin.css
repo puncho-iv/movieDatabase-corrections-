@@ -180,6 +180,10 @@
   font-weight: 500;
 }
 
+.sign-up-link:hover{
+  color: var(--color-dark);
+}
+
 em{
   font-weight: 600;
   font-family: Poppins;

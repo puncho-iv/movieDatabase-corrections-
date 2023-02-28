@@ -1,7 +1,6 @@
 import React from 'react'
 import Nav from '../../components/nav/nav'
 import Footer from '../footer/footer'
-
 import MovieList from '../../components/movies/movieList'
 
 import './home.css'

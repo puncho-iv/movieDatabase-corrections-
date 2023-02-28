@@ -93,10 +93,6 @@ function Signin() {
               <AiFillEye icon={icon} size={18} />
             </span>
 
-            {/* <button className='eye' onClick={toggleBtn}>
-                {state ? <AiFillEye />:<AiFillEyeInvisible/>}
-              </button> */}
-
             <error id="new">
               {errors.newPassword?.type === "required" &&
                 "*Enter your password"}

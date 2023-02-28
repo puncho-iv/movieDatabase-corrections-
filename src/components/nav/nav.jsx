@@ -46,13 +46,15 @@ class Nav extends Component {
             </li>
           </nav>
 
-          <div className="avatar">
-            <GrFormAdd id="addUploads" />
-
-            <BsFillBellFill id="right-avatar" />
-
+          <div className="avatar" id="avatar-menu">
             <li id="avatar-shape">
-              <HiUserCircle id="right-avatar" />
+              <GrFormAdd id="avatar-icon" />
+            </li>
+            <li id="avatar-shape">
+              <BsFillBellFill id="avatar-icon" />
+            </li>
+            <li id="avatar-shape">
+              <HiUserCircle id="avatar-icon" />
               <ul className="nav-item-drop">
                 {this.state.avatarMenu.map((avatarMenu) => (
                   <li>{avatarMenu}</li>

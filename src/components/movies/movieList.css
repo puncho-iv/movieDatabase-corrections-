@@ -29,63 +29,64 @@
   border: 1px solid rgb(99, 99, 99);
 }
 
-.trends{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 11.5rem;
-    width: 80rem;
-    margin-left: 2.5rem;
-    margin-right: -10rem;
-    border-radius: 5px;
-    margin-top: 5rem;
-    margin-bottom: -5rem;
-    overflow: auto;
+.trends {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 11.5rem;
+  width: 80rem;
+  margin-left: 2.5rem;
+  margin-right: -10rem;
+  border-radius: 5px;
+  margin-top: 5rem;
+  margin-bottom: -5rem;
+  overflow: auto;
 }
 
-.trends img{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 5rem;
-    height: 14rem;
-    margin-left: -20rem;
-    width: 22rem;
-    border-radius: 5px;
-    margin-right: 10rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    z-index: -1;
-   
+.trends img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5rem;
+  height: 14rem;
+  margin-left: -20rem;
+  width: 22rem;
+  border-radius: 5px;
+  margin-right: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  z-index: -1;
 }
 
 .trendsContainer {
-    height: 56vh;
-    width: 85rem;
-    margin-top: -20rem;
-    margin-bottom: 12.5rem;
-    margin-left: 5.5rem;
-    background-position: top center;
-    border-radius: 8px;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
-    z-index: -1;
-  }
+  height: 56vh;
+  width: 85rem;
+  margin-top: -20rem;
+  margin-bottom: 12.5rem;
+  margin-left: 5.5rem;
+  background-position: top center;
+  border-radius: 8px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  z-index: -1;
+}
 
-  .imageOverlay{
-    background-color: rgba(255, 166, 0, 0.519);
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-  }
+.imageOverlay {
+  background-color: rgba(255, 166, 0, 0.519);
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
 
-  /*===============END OF CONTAINERS================*/
-  
+/*===============END OF CONTAINERS================*/
 
-  /*===============HERO================*/
-.heroContent h1 {
-  margin: 18rem 0 13rem 7.5rem;
+/*===============HERO================*/
+.heroContent h3 {
+  margin: 15rem 0 18rem 7.5rem;
+  background: linear-gradient(to right, #f32170, #be421c, #cf23cf);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   font-size: 40px;
   font-weight: 800;
   font-family: Poppins;
@@ -93,16 +94,16 @@
 }
 
 .heroContent p {
-  margin: -12.5rem 0 8.5rem 7.5rem;
+  margin: -17.5rem 0 15.5rem 7.5rem;
   font-size: 12px;
   font-weight: 400;
   font-family: Poppins;
-  max-width: 40%;
+  max-width: 60%;
 }
 
 .hero {
-  height: 70vh;
-  margin-top: -2.5rem;
+  height: 100vh;
+  margin-top: -8rem;
   margin-bottom: -65rem;
   background-position: top center;
   background-size: cover;
@@ -134,17 +135,33 @@
 
 #play {
   color: var(--header-color);
-  margin: -15.4rem 26rem 0 -18.30rem ;
-  font-size: 20px;
+  margin: -15.4rem 26rem 0 -18.3rem;
+  font-size: 18px;
   display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.buttons {
+  display: flex;
+  margin: 10rem 55rem -2rem -45.5rem;
+}
+
+#later {
+  display: flex;
+  margin: -10rem 72rem 11.5rem -73rem;
+  background-color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  font-size: 14px;
+  font-family: Poppins;
+  color: var(--color-bg-variant);
+  width: 17rem;
   align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 0 0.5px;
 }
-
-.buttons{
-  display: flex;
-  margin: 10rem 60.5rem -9rem -60.5rem;
-}
-
 
 /*===============END OF HERO================*/
 
@@ -381,6 +398,3 @@
 }
 
 /*===============END OF SEARCH================*/
-
-
-
