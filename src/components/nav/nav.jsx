@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./nav.css";
 import logo from "../../images/logo.svg";
 import { HiUserCircle } from "react-icons/hi";
-import { BsFillBellFill } from "react-icons/bs";
-import { GrFormAdd } from "react-icons/gr";
+import { BsFillBellFill,  } from "react-icons/bs";
+import { BsDatabaseFillAdd} from "react-icons/bs";
+import {menuItems} from '../../components/nav/navPath'
 
 class Nav extends Component {
   state = {
@@ -17,6 +18,7 @@ class Nav extends Component {
       "Logout",
     ],
   };
+
 
   render() {
     return (
@@ -48,7 +50,7 @@ class Nav extends Component {
 
           <div className="avatar" id="avatar-menu">
             <li id="avatar-shape">
-              <GrFormAdd id="avatar-icon" />
+              <BsDatabaseFillAdd  id="avatar-icon" />
             </li>
             <li id="avatar-shape">
               <BsFillBellFill id="avatar-icon" />

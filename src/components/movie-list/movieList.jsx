@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import MovieCard from "./movieCard";
+import MovieCard from "../movie-card/movieCard";
 import VideoCard from "../videos/videoCard";
 import "./movieList.css";
 import { GoPlay } from "react-icons/go";
 import YouTube from "react-youtube";
 import { RiSearch2Line } from "react-icons/ri";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade } from 'swiper';
+
 import {
   getInTheatres,
   getMovies,
@@ -14,7 +17,7 @@ import {
   getTrendingMovies,
   getTrendingToday,
   getTV,
-} from "../api/moviesService";
+} from "../../api/movieService"; 
 
 const MovieList = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
@@ -39,7 +42,7 @@ const MovieList = () => {
   useEffect(() => {
     const getData = async () => {
       if (movieType === "In Theatres") {
-        const { data } = await getInTheatres();
+        const { data } = await getTopRatedMovies();
         setMovies(data.results);
         setSelectedMovies(data.results[1]);
       } else if (movieType === "For Rent") {
@@ -80,14 +83,14 @@ const MovieList = () => {
   }, [freeToWatch]);
 
   const selectMovie = async (movie) => {
-    const data =  trendingMovies(movie.id);
-    console.log('movie data', data);
+    const data = trendingMovies(movie.id);
+    console.log("movie data", data);
     setSelectedMovies(movie);
   };
 
   useEffect(() => {
-    trendingMovies()
-  }, [])
+    trendingMovies();
+  }, []);
 
   const trendingMovies = (movie) =>
     trending.map((movie) => <VideoCard key={movie.id} movie={movie} />);
@@ -133,7 +136,6 @@ const MovieList = () => {
             backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
           }}
         >
-          
           <div className="heroContent">
             <h3>{selectedMovies.title}</h3>
             <p>{selectedMovies.overview}</p>

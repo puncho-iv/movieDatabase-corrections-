@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./reset.css";
 import { MdEmail } from "react-icons/md";
 import logo from "../../images/logo.svg";
-import Footer from "../footer/footer";
+import Footer from "../../components/footer/footer";
 import resetImage from "../../images/resetImage.jpg";
 import { useForm } from "react-hook-form";
 
@@ -19,12 +19,14 @@ function Reset() {
   };
 
   const [resetPass, setResetPass] = useState(false);
+  const [resetForm, setResetForm] = useState(false);
 
   const resetPassfrm = () => {
     setResetPass(!resetPass)
+    setResetForm((resetForm) => !resetForm);
   }
 
-  return (
+   return (
     <section id="reset">
       <div className="reset_container">
         <h3 id="reset_header">Reset Account</h3>
@@ -40,6 +42,7 @@ function Reset() {
       </div>
 
       <div className="reset-col2">
+     
       <form className="resetForm" onClick={handleSubmit(onSubmit)}>
         <label className="resetLabel">Email Address</label>
         <input
@@ -55,10 +58,11 @@ function Reset() {
         <error id="resetError">
           {errors.email?.type === "required" && "*Email is required"}
         </error>
-
+        
         <button className="reset-btn" onClick={resetPassfrm}>Next</button>
-      </form>
       
+      </form>
+             
       {resetPass && (
       <form className="resetPass" onSubmit={handleSubmit(onSubmit)}>
         <label className="reset-password">Password</label>
@@ -82,6 +86,8 @@ function Reset() {
             Send Code
           </Link>
         </button>
+
+
       </form>
       )}
       </div> 
