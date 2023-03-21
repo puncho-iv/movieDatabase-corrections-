@@ -4,14 +4,24 @@ import "./subscription.css";
 import Left from "../../images/left.png";
 import { BsCheck2, BsBookmarkStarFill } from "react-icons/bs";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Subscription = () => {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div className="leftSubscribe">
       <div className="col1">
         <img src={logo} alt="background" id="subLogo" />
         <img src={Left} alt="background-img" id="leftImg" />
-        <ul>
+        <ul id="list">
           <li>
             <BsCheck2 id="check" />
             Unlimited Movies and Shows
@@ -36,7 +46,7 @@ const Subscription = () => {
           Choose your Plan
         </h3>
 
-        <form className="subForm">
+        <form className="subForm" onSubmit={handleSubmit(onSubmit)}>
           <label className="subLabel">
             <input type="radio" name="plans" id="free" />
             <span id="subSpan">FREE</span> ONE MONTH
@@ -55,16 +65,23 @@ const Subscription = () => {
           <p id="subText">EMAIL ADDRESS</p>
           <input
             id="subName"
-            type="text"
-            placeholder="Enter your email address"
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            {...register("email", {
+              required: true,
+              pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
+            })}
           />
-          <button id="subBtn" type="submit">
+          <error id='subError'>
+                {errors.newPassword?.type === "required" && "*Enter your password"}
+              </error>
+
+            <Link to = "/home">
+            <button id="subBtn">
             Subscribe
           </button>
-
-          {/* <error id='subError'>
-                {errors.newPassword?.type === "required" && "*Enter your password"}
-              </error> */}
+          </Link>
         </form>
       </div>
     </div>

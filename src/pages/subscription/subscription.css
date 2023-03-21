@@ -25,6 +25,7 @@
   width: 145%;
   height: 100vh;
   margin-top: -15rem;
+  margin-bottom: 15rem;
 }
 
 .col1 {
@@ -59,6 +60,7 @@
   flex-basis: 50%;
   flex-grow: 1;
   padding: 50px 80px;
+  margin-bottom: 2  rem;
 }
 
 .col2 h3 {
@@ -75,11 +77,16 @@
   color: var(--color-secondary);
 }
 
+#list{
+  margin-top: -15rem;
+}
+
 .col2 #icon {
   color: var(--color-secondary);
 }
 
 .subForm {
+  font-family: Poppins;
   width: 400px;
   color: #333;
   font-weight: 500;
@@ -151,5 +158,6 @@
 }
 
 #subText {
+  font-family: Poppins;
   font-weight: 500;
 }

@@ -82,23 +82,23 @@
 /*===============END OF CONTAINERS================*/
 
 /*===============HERO================*/
-.heroContent h3 {
+.heroContent h1 {
   margin: 15rem 0 18rem 7.5rem;
   background: linear-gradient(to right, #f32170, #be421c, #cf23cf);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 800;
   font-family: Poppins;
   max-width: 60%;
 }
 
 .heroContent p {
-  margin: -17.5rem 0 15.5rem 7.5rem;
+  margin: -16rem 0 32rem 7.5rem;
   font-size: 12px;
   font-weight: 400;
   font-family: Poppins;
-  max-width: 60%;
+  max-width: 45%;
 }
 
 .hero {
@@ -144,18 +144,18 @@
 
 .buttons {
   display: flex;
-  margin: 10rem 54rem -2rem -46rem;
+  margin: 10rem 51.5rem -2rem -60rem;
 }
 
 #later {
   display: flex;
-  margin: -10rem 72rem 11.5rem -72rem;
+  margin: -10rem 68.5rem 11.5rem -70rem;
   background-color: rgba(255,255,255,0.5);
   font-weight: 500;
   font-size: 14px;
   font-family: Poppins;
   color: var(--color-bg-variant);
-  width: 25rem;
+  width: 15rem;
   align-items: center;
   justify-content: center;
   height: 2.5rem;
@@ -365,7 +365,7 @@
 #searchFrm #right-search {
   display: block;
   align-items: center;
-  margin: -0.6rem 0 0 4.5rem;
+  margin: .5rem 0 0 5.5rem;
   font-size: 26px;
   color: var(--color-bg-variant);
 }
@@ -375,7 +375,7 @@
   align-items: center;
   height: 2.5rem;
   width: 23rem;
-  margin: -2rem 0 0 -16rem;
+  margin: -2rem 0 0 -15rem;
   font-family: Poppins;
   font-size: 14px;
   text-indent: 6%;

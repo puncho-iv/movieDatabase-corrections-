@@ -54,7 +54,7 @@ const MovieList = () => {
         setMovies(data.results);
         setSelectedMovies(data.results[6]);
       } else if (movieType === "On TV") {
-        const { data } = await getTopRatedMovies();
+        const { data } = await getInTheatres();
         setMovies(data.results);
         setSelectedMovies(data.results[3]);
       }
@@ -137,8 +137,9 @@ const MovieList = () => {
           }}
         >
           <div className="heroContent">
-            <h3>{selectedMovies.title}</h3>
+            <h1>{selectedMovies.title}</h1>
             <p>{selectedMovies.overview}</p>
+            <p>{selectedMovies.ratings}</p>
           </div>
           <div className="buttons">
             <button className={"moviePlay"}>Play Trailer</button>

@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 import { HiUserCircle } from "react-icons/hi";
 import { BsFillBellFill,  } from "react-icons/bs";
 import { BsDatabaseFillAdd} from "react-icons/bs";
-import {menuItems} from '../../components/nav/navPath'
+import { Link } from "react-router-dom";
 
 class Nav extends Component {
   state = {
@@ -63,7 +63,16 @@ class Nav extends Component {
                 ))}
               </ul>
             </li>
-          </div>
+                   
+            <Link to = "/subscription">           
+            <button  className="subscription_btn">
+            Subscribe Now
+            </button>
+            </Link>       
+    
+             </div>
+
+
         </div>
       </section>
     );
