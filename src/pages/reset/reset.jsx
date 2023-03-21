@@ -42,7 +42,7 @@ function Reset() {
       </div>
 
       <div className="reset-col2">
-     
+      {!resetPass && (
       <form className="resetForm" onClick={handleSubmit(onSubmit)}>
         <label className="resetLabel">Email Address</label>
         <input
@@ -62,6 +62,7 @@ function Reset() {
         <button className="reset-btn" onClick={resetPassfrm}>Next</button>
       
       </form>
+      )}
              
       {resetPass && (
       <form className="resetPass" onSubmit={handleSubmit(onSubmit)}>

@@ -62,7 +62,7 @@
 }
 
 .resetPass {
-  margin: -19rem 0 0 57.5rem;
+  margin: -35rem 0 0 57.5rem;
 }
 
 .resetLabel {
@@ -148,7 +148,18 @@
 #resetLink{
   text-decoration: none;
   color: var(--header-color);
-  margin-top: -2rem;
+  margin: 1rem -32rem 0 32rem;
+  background: linear-gradient(
+    to right,
+    rgba(159, 79, 107, 100),
+    rgba(182, 77, 94, 100)
+  );
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
 }
 
 #resetEmail{
