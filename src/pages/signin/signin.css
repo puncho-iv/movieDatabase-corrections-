@@ -261,7 +261,6 @@ span:hover {
 
   .form_signin {
     flex-direction: column;
-
   }
 
   .signin-col1 img {
@@ -269,16 +268,10 @@ span:hover {
     height: 80px;
   }
 
-  .signin-content h1 {
-    display: none;
-  }
-
-  .form_signin .user-input {
-    width: 100%;
-  }
-
+  .form_signin .user-input,
   .form_signin .user-input1 {
     width: 100%;
+    text-indent: 3%;
   }
 
   .links {
@@ -300,19 +293,76 @@ span:hover {
     margin-left: 0rem;
     font-size: 15px;
     position: relative;
-    top: 10;
-    right: 15;
+    top: 30;
+    right: 12;
   }
 
   #bottom-links-checkbox {
     margin-top: -1rem;
+  }
+
+  .email_image,
+  .password_image,
+  .signin-content {
+    display: none;
+  }
+
+  #pwd_eye {
+    position: relative;
+    right: 20;
+    justify-content: end;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .email_image,
+  .password_image,
+  .signin-content {
+    display: none;
+  }
+
+
+  #signin-header {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--header-color);
+    width: 100%;
+  }
+
+  #pwd_eye {
+    position: relative;
+    justify-content: end;
+    right: 25;
+  }
+
+  .form_signin .user-input,
+  .form_signin .user-input1 {
+    width: 100%;
+    text-indent: 1%;
+  }
+
+  .forgotten {
+    /* justify-content: end; */
+    position: relative;
+    right: 90;
+    top: 10;
+  }
+
+  .button-signin {
+    width: 50%;
+  }
+
+  #bottom-links-checkbox {
+    position: relative;
+    left: 0;
 
   }
 
-  /* #pwd_eye {
-    position: relative;
-   left: 20;
-  } */
+  #signin-header {
+    color: var(--color-dark);
+  }
+
 }
 
 

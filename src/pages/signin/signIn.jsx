@@ -104,13 +104,13 @@ function Signin() {
           <div className="bottom">
             <h3 id="remember">Remember me</h3>
             <input type="checkbox" id="bottom-links-checkbox" />
+          </div>
 
-            <div className="bottom-links">
+          <div className="bottom-links">
               <Link to="/reset" className="forgotten">
                 Forgotten Password?
               </Link>
             </div>
-          </div>
 
           <div>
             <button className="button-signin" Link to="/home" type="submit">
