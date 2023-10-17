@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+
 * {
     box-sizing: border-box;
 }
@@ -9,44 +10,46 @@
 
     display: flex;
     flex-flow: row nowrap;
-    background: linear-gradient(to right, rgba(159,79,107,100), rgba(182,77,94,100));
+    background: linear-gradient(to right, rgba(159, 79, 107, 100), rgba(182, 77, 94, 100));
     margin-top: 0;
-    height: 100vh;
+    height: 100%;
     color: var(--color-bg);
+    font-family: Poppins;
 }
 
 .left-pane {
-    flex: 2;
+    flex: 1;
 }
 
 .right-pane {
     flex: 3;
-    padding: 6rem 4rem;
+    padding: 3rem 3rem;
 }
 
 #bg-img {
     width: 100%;
     height: 100%;
+
 }
 
 .logo img {
     width: 100px;
     height: 100px;
-    margin-top: -2.5rem;
 }
 
 .logo h3 {
-    font-size: 45px;
-    font-weight: 800;
+    font-size: 80px;
+    font-weight: 900;
     color: var(--header-color);
     margin-top: 0.5rem;
+    width: 80%;
 }
 
 .links-container {
     margin-top: 2.5rem;
 }
 
-.custom-btn {    
+.custom-btn {
     background-color: var(--header-color);
     padding: 0.5rem 1rem;
     border-radius: 100px;
@@ -55,13 +58,12 @@
     margin-top: -1.2rem;
 }
 
-.custom-btn > .custom-btn-img {
+.custom-btn>.custom-btn-img {
     width: 30px;
     height: 30px;
-    margin-top: -0.5rem;
 }
 
-.custom-btn > .custom-btn-text {
+.custom-btn>.custom-btn-text {
     margin-left: 1.5rem;
     font-size: 1.2rem;
     text-decoration: none;
@@ -72,40 +74,41 @@
 .custom-btn:hover {
     background: transparent;
     outline: 4px solid var(--header-color);
+    color: var(--header-color);
 }
 
-.custom-btn > .custom-btn-text:hover{
+.custom-btn>.custom-btn-text:hover {
     color: var(--header-color);
 }
 
 #apple-signin-btn,
 #mobile-signin-btn {
     margin-top: 1rem;
-    width: 50%;
+    width: 100%;
 }
 
-#apple-signin-btn > .custom-btn-img{
+#apple-signin-btn>.custom-btn-img {
     margin-left: -2.5rem;
 }
 
-#mobile-signin-btn > .custom-btn-text{
+#mobile-signin-btn>.custom-btn-text {
     margin-left: 0.5rem;
     font-weight: 700;
     color: var(--header-color);
 }
 
-#mobile-signin-btn{
+#mobile-signin-btn {
     background: var(--color-dark);
     color: var(--header-color);
-    width: 50%;
+    width: 100%;
 }
 
-#signin-btn > .custom-btn-text{
-    margin-left: 0.5rem; 
+#signin-btn>.custom-btn-text {
+    margin-left: 0.5rem;
 }
 
-#signin-btn{
-    width: 50%;
+#signin-btn {
+    width: 100%;
 }
 
 #signin-divider {
@@ -128,18 +131,111 @@ em {
 }
 
 .signin-alt {
-    margin-top: 2.5rem;
+    padding-top: 8rem;
     margin-bottom: 2rem;
     margin-left: 1rem;
 }
 
 
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    #startup {
+        align-content: center;
+        text-align: center;
+        padding: 12rem;
+        justify-content: center;
+    }
+
+    .logo h3 {
+        font-size: 35px;
+        font-weight: 800;
+        color: var(--header-color);
+        width: 100%;
+        text-align: center;
+    }
+
+    #bg-img {
+        display: none;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .right-pane {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        margin: 30;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .logo h3 {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--header-color);
+        width: 100%;
+    }
+
+    .signin-alt {
+        padding-top: 5rem;
+    }
+
+    .links-container {
+        padding-top: 3rem;
+        margin-top: 0rem;
+    }
+
+    .left-pane {
+        flex: 2;
+    }
+
+    .right-pane {
+        flex: 2;
+        padding: 4rem;
+    }
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .logo h3 {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--header-color);
+        width: 100%;
+    }
+
+    .right-pane {
+        flex: 1;
+        padding-top: 6rem;
+    }
+
+    .left-pane {
+        flex: 1;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .logo h3 {
+        font-size: 85px;
+        font-weight: 700;
+        color: var(--header-color);
+        width: 90%;
+    }
+
+    .left-pane {
+        flex: 2;
+    }
+}
 
 
 
 
 img {
     width: 70px;
-    height: 70px;   
+    height: 70px;
 }
