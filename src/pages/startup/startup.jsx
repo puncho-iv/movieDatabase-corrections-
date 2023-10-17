@@ -43,15 +43,16 @@ const Startup = () => {
               By signing up, you agree to the <em>Terms of Service </em> and <em> Privacy Policy,</em> including <em> Cookie Use</em>.
             </p>
 
-            <div className="signin-alt">
+
+
+          </div>
+          <div className="signin-alt">
               Already have an account?
             </div>
 
             <button className="custom-btn" id='signin-btn'>
               <Link to="/signin" className='custom-btn-text'>Sign in</Link>
             </button>
-
-          </div>
         </div>
 
     </section>
