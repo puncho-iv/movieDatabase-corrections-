@@ -36,10 +36,10 @@ function Signin() {
     <section id="signin">
       <div className="signin-content">
         <div className="signin-content-bg">
-        <img src={asset} alt="background" id="left-column-img" />
-        <h1>Come in and see all the new movies...</h1>
-        {/* <p>Lorem ipsum..</p> */}
-      </div>
+          <img src={asset} alt="background" id="left-column-img" />
+          <h1>Come in and see all the new movies...</h1>
+          {/* <p>Lorem ipsum..</p> */}
+        </div>
       </div>
 
       <div className="links">
@@ -50,13 +50,12 @@ function Signin() {
       </div>
 
       <div className="col2">
-
         <div className="signin-col1">
           <img src={logo} alt="logo" />
         </div>
 
         <h1 id="signin-header">Sign In</h1>
-        
+
         <form
           className="form_signin"
           onSubmit={handleSubmit(onSubmit)}
@@ -101,22 +100,22 @@ function Signin() {
             {errors.newPassword?.type === "required" && "*Enter your password"}
           </error>
 
-          <div className="bottom">
-            <h3 id="remember">Remember me</h3>
-            <input type="checkbox" id="bottom-links-checkbox" />
-          </div>
+          <div className="rowFlex">
+            <div className="bottom">
+              <h3 id="remember">Remember me</h3>
+              <input type="checkbox" id="bottom-links-checkbox" />
+            </div>
 
-          <div className="bottom-links">
+            <div>
               <Link to="/reset" className="forgotten">
                 Forgotten Password?
               </Link>
             </div>
-
-          <div>
-            <button className="button-signin" Link to="/home" type="submit">
-              Submit
-            </button>
           </div>
+
+          <button className="button-signin" Link to="/home" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </section>

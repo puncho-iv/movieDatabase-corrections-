@@ -4,9 +4,9 @@ import VideoCard from "../videos/videoCard";
 import "./movieList.css";
 import { GoPlay } from "react-icons/go";
 import YouTube from "react-youtube";
-import { RiSearch2Line } from "react-icons/ri";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade } from 'swiper';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade } from "swiper";
 
 import {
   getInTheatres,
@@ -17,7 +17,7 @@ import {
   getTrendingMovies,
   getTrendingToday,
   getTV,
-} from "../../api/movieService"; 
+} from "../../api/movieService";
 
 const MovieList = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
@@ -118,7 +118,7 @@ const MovieList = () => {
   return (
     <div className="api">
       <div className="search">
-        <form id="searchFrm" onSubmit={searchMovie}>
+        {/* <form id="searchFrm" onSubmit={searchMovie}>
           <RiSearch2Line id="right-search" type="submit" />
           <input
             type="text"
@@ -128,7 +128,7 @@ const MovieList = () => {
             onClick={searchMovie}
           />
         </form>
-        {searchKey}
+        {searchKey} */}
 
         <div
           className="hero"
@@ -142,8 +142,8 @@ const MovieList = () => {
             <p>{selectedMovies.ratings}</p>
           </div>
           <div className="buttons">
-            <button className={"moviePlay"}>Play Trailer</button>
             <GoPlay id="play" />
+            <button className={"moviePlay"}>Play Trailer</button>
           </div>
 
           <button id="later">Watch Later</button>
@@ -151,7 +151,7 @@ const MovieList = () => {
       </div>
 
       <div className="header">
-        <header className="headerListing" id="header-menu">
+        <header className="headerListing">
           <li className="headerList">
             What's Popular
             <ul id="tabs">

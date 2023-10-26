@@ -1,16 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 /*===============CONTAINERS================*/
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+height: 30rem;
   gap: 4.5rem;
-  width: 11rem;
+  width: 100%;
   margin-left: -1.5rem;
   margin-right: -4rem;
   border-radius: 8px;
-  margin-top: 3rem;
+
   overflow: auto;
 }
 
@@ -21,10 +28,11 @@
   gap: 4.5rem;
   height: 15rem;
   margin-left: 0;
-  width: 11rem;
+  width: 14rem;
+  height: 18rem;
   border-radius: 8px;
-  margin-right: -4rem;
-  margin-top: 3rem;
+  margin-right: -3rem;
+  margin-top: 10rem;
   overflow: auto;
   border: 1px solid rgb(99, 99, 99);
 }
@@ -82,7 +90,7 @@
 /*===============END OF CONTAINERS================*/
 
 /*===============HERO================*/
-.heroContent h1 {
+/* .heroContent h1 {
   margin: 15rem 0 18rem 7.5rem;
   background: linear-gradient(to right, #f32170, #be421c, #cf23cf);
   -webkit-text-fill-color: transparent;
@@ -99,100 +107,139 @@
   font-weight: 400;
   font-family: Poppins;
   max-width: 45%;
+} */
+
+.heroContent h1 {
+  font-size: 60px;
+  font-weight: 800;
+  font-family: Poppins;
+  max-width: 60%;
+  padding: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.heroContent p {
+  font-size: 25px;
+  font-weight: 400;
+  font-family: Poppins;
+  max-width: 45%;
+  padding: 100;
+  position: relative;
+  top: 80;
 }
 
 .hero {
+  position: relative;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 100vh;
-  margin-top: -8rem;
-  margin-bottom: -65rem;
-  background-position: top center;
   background-size: cover;
-  display: flex;
-  align-items: flex-end;
 }
 
 .heroContent {
   color: var(--header-color);
+  background-color: transparent;
+
 }
 
 .moviePlay {
   color: var(--header-color);
-  background: linear-gradient(
-    to right,
-    rgba(159, 79, 107, 100),
-    rgba(182, 77, 94, 100)
-  );
-  font-size: 14px;
+  background: linear-gradient(to right,
+      rgba(159, 79, 107, 100),
+      rgba(182, 77, 94, 100));
+  font-size: 16px;
   font-weight: 600;
   font-family: Poppins;
   margin-top: -16rem;
-  margin-left: 7.5rem;
-  margin-right: 10rem;
-  width: 9rem;
-  height: 2.5rem;
-  border-radius: 5px;
+  width: 290px;
+  height: 60px;
+  border-radius: 8px;
+  padding-left: 35;
 }
 
 #play {
   color: var(--header-color);
-  margin: -15.4rem 26rem 0 -18.3rem;
+  position: absolute;
   font-size: 18px;
-  display: flex;
-  justify-content: flex-start;
-  padding: 0;
+  left: 80;
+  top: -212;
+  width: 25px;
+  height: 25px;
 }
 
 .buttons {
-  display: flex;
-  margin: 10rem 51.5rem -2rem -60rem;
+  position: absolute;
+  left: 100;
+  align-items: center;
+
+
 }
 
 #later {
-  display: flex;
-  margin: -10rem 68.5rem 11.5rem -70rem;
-  background-color: rgba(255,255,255,0.5);
+
+  /* margin: -10rem 68.5rem 11.5rem -70rem; */
+  background-color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
   font-size: 14px;
   font-family: Poppins;
   color: var(--color-bg-variant);
-  width: 15rem;
+  margin-top: -14.5rem;
+  width: 200px;
+  height: 60px;
+  border-radius: 8px;
+  padding-left: 35;
   align-items: center;
   justify-content: center;
-  height: 2.5rem;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0.5px 0.5px 0 0.5px;
+  position: absolute;
+  left: 26rem;
 }
 
 /*===============END OF HERO================*/
 
 /*===============HEADER================*/
 .header {
-  display: flex;
-  flex-direction: row-wrap;
   border: none;
   background: transparent;
-  margin-top: 22.6rem;
-  margin-left: -0.5rem;
+  position: absolute;
+  width: 100%;
+}
+
+.headerListing{
+  gap: 150px;
+  display: flex;
+  flex-direction: column;
 }
 
 .headerListing > .headerList {
   font-family: Poppins;
-  font-size: 1.5rem;
+  font-size: 25px;
   font-weight: 700;
-  margin-left: 7rem;
-  margin-top: 44rem;
-  margin-bottom: -26.5rem;
+  padding: 100;
+  gap: 50px;
   background-color: none;
 }
+
+/* .headerList{
+  padding: 100px;
+  position: absolute;
+} */
 
 .headerListing li {
   position: relative;
   display: flex;
-  row-gap: 2px;
+  gap: 10rem;
+  flex-direction: row;
 }
 
 .headerList ul {
-  font-size: 0.85rem;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -201,9 +248,9 @@
   border-radius: 30px;
   align-items: center;
   justify-content: center;
-  padding: 0.1rem;
-  margin-top: -0.1rem;
-  margin-left: 1rem;
+  width: 50%;
+  padding: 20rem;
+  gap: 5rem;
   height: 2.5rem;
   background-color: none;
 }
@@ -214,17 +261,16 @@
   display: flex;
   padding: 0.1rem 0.3rem;
   border-radius: 30px;
-  margin-left: 0.1rem;
-  transition: background-color 200ms ease-in-out;
+  /* margin-left: 0.1rem; */
+  transition: var(--header-color) 200ms ease-in-out;
   background-color: transparent;
 }
 
 #tabs li {
   list-style: none;
-  padding: 0.3rem 0rem;
+  padding: 10px;
   border-radius: 30px;
-  transition: background-color 200ms ease-in-out;
-  margin-left: 0.1rem;
+  transition: var(--header-color) 200ms ease-in-out;
 }
 
 #tabs {
@@ -234,13 +280,13 @@
   cursor: pointer;
   border-radius: 30px;
   align-items: center;
-  padding: 0.2rem 0 0.2rem 0;
-  margin-bottom: 2rem;
+  padding: 20px;
+  width: 40%;
   text-decoration: none;
 }
 
-#tabs > li button:active,
-#tabs > li button:focus {
+#tabs>li button:active,
+#tabs>li button:focus {
   display: flex;
   flex-direction: row;
   background: var(--color-bg-variant);
@@ -343,8 +389,8 @@
   margin-left: 0.1rem;
 }
 
-#trendsTab > li button:active,
-#trendsTab > li button:focus {
+#trendsTab>li button:active,
+#trendsTab>li button:focus {
   display: flex;
   flex-direction: row;
   background: var(--header-color);

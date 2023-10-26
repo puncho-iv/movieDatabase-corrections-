@@ -5,323 +5,83 @@
 }
 
 #reset {
-  --button-width: 280px;
-  --button-img: 100px;
-  --textbox-width: 100rem;
-  --button: 20rem;
-}
+  --button-width: 290px;
 
-.reset_container {
-  width: 100%;
-  min-height: 50vh;
   display: flex;
+  flex-flow: row nowrap;
+  margin-top: 0;
+  height: 100%;
+  color: var(--color-bg);
+  font-family: Poppins;
   align-items: center;
-  flex-wrap: wrap;
 }
 
-.reset_container img {
-  width: 6rem;
-  height: 6rem;
-  margin-top: -22.5rem;
-  margin-left: -59.5rem;
+.reset-image {
+  flex: 2;
 }
 
-.reset_container h3 {
-  margin: -10rem 0 0 56rem;
-  font-family: Poppins;
-  font-weight: 700;
-}
-
-.reset-image img {
-  width: 50%;
-  height: 70vh;
-  margin-top: -19.5rem;
-  margin-left: 5rem;
-}
-
-.reset-content h1 {
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0.5rem 0 0 5rem;
-}
-
-#reset_header {
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 700;
-  margin: -5.5rem 0 0 55.5rem;
-}
-
-.reset-content p {
-  margin: 0 0 0 5rem;
-}
-
-.resetForm {
-  margin: -22rem 0 0 57.5rem;
-}
-
-.resetPass {
-  margin: -35rem 0 0 57.5rem;
-}
-
-.resetLabel {
-  margin: -28rem 0 8rem -7rem;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  color: var(--color-dark);
-  border-radius: 8px;
-  font-family: Poppins;
-}
-
-.reset-input {
-  display: flex;
-  border: 1px solid var(--color-dark);
-  padding: 8px;
-  border-radius: 5px;
-  margin: -7rem 0 1rem -7rem;
-  width: 20rem;
-  text-indent: 7%;
-}
-
-.resetinput{
-  display: flex;
-  border: 1px solid var(--color-dark);
-  padding: 8px;
-  border-radius: 5px;
-  margin: -7.2rem 0 1rem -7rem;
-  width: 20rem;
-  text-indent: 7%;
-}
-
-.reset-btn {
-  background: linear-gradient(
-    to right,
-    rgba(159, 79, 107, 100),
-    rgba(182, 77, 94, 100)
-  );
-  padding: 0.5rem 1rem;
-  color: var(--header-color);
-  border-radius: 3px;
-  width: 10rem;
-  height: 2.5rem;
-  transition: outline 200ms;
-  margin-top: 2rem;
-  margin-left: -7rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.reset-password {
-  margin: 7.3rem 0 8rem -7rem;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  color: var(--color-dark);
-  border-radius: 8px;
-  font-family: Poppins;
-}
-
-.reset-btn2 {
-  display: flex;
-  background: linear-gradient(
-    to right,
-    rgba(159, 79, 107, 100),
-    rgba(182, 77, 94, 100)
-  );
-  padding: 0.5rem 1rem;
-  color: var(--header-color);
-  border-radius: 3px;
-  width: 10rem;
-  height: 2.5rem;
-  transition: outline 200ms;
-  margin-top: 2rem;
-  margin-left: -40rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-#resetLink{
-  text-decoration: none;
-  color: var(--header-color);
-  margin: 1rem -32rem 0 32rem;
-  background: linear-gradient(
-    to right,
-    rgba(159, 79, 107, 100),
-    rgba(182, 77, 94, 100)
-  );
-  width: 10rem;
-  height: 2.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-}
-
-#resetEmail{
-  margin: -2.8rem 0 0 -6.5rem;
-}
-
-#resetError{
-  display: flex;
-  color: #ff6774;
-  margin-left: -6.5rem;
-  margin-top: -0.1rem;
-  margin-bottom: 0.5rem;
-  font-size: 12px; 
-  z-index: 1;  
+.bg-img {
+  height: 60rem;
+  width: 55rem;
 }
 
 .reset-col2{
-  flex-basis: 50%;
-  flex-grow: 1;
-  padding: 50px 80px;
+  flex: 4;
+  /* padding: 30px 30px; */
 }
 
-#Footer{
-  margin-top: -4rem;
-}
-
-
-/* .reset_container img{
-    height: 70px;
-    width: 70px;   
-    margin: -11rem 0 0 10rem;
-    z-index: 1;
+.reset_logo img {
+  width: 100px;
+  height: 100px;
 }
 
 #reset_header{
-    margin: 10rem 0 0 69rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--color-bg-variant);
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+.reset-input{
+  display: flex;
+  border: 1px solid var(--color-dark);
+  padding: 8px;
+  border-radius: 5px;
+  width: 80%;
+  text-indent: 5%;
 }
 
-.resetForm{
-    margin: -22rem 0 0 57.5rem;  
-}
-
-.resetPass{
-  display: none;
-  margin: -18rem 0 0 57.5rem;
-}
-
-.reset-note {
-    margin-left: 63.5rem ;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 300;
-    justify-content: center;
-  }
-
-
-.resetForm:before{
-    content:" ";
-    display: block;
-    height: 32rem;
-    width: 27rem;
-    position: absolute;
-    top: 15%;
-    left: 62%;
-    background: var(--header-background);
-    z-index: -1;
-    opacity: 1;
-}
-
-.reset-image{
-    margin-left: 10rem;
-    margin-top: 12rem;
-    z-index: -1;
-}
-
-.reset-image .reset-content{
-    position: absolute;
-    bottom: 6rem;
-    background: var(--color-bg-variant);
-    background: var(--color-dark, 0.5); 
-    width: 50%;
-    padding: 20px;
-    color: var(--header-color);
-    font-family: Poppins;
-   
-  }
-
-  .reset-image > .reset-image-column{
-    height: 100%;
-    width: 50%;
-    margin: -23rem 0 0 0;
-  }
-
-  .reset-content h1{
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  .reset-content p{
-    font-size: 1.2rem;
-    font-weight: 400;
-  }
-
-  .reset-btn{
-        background: linear-gradient(to right, rgba(159,79,107,100), rgba(182,77,94,100));
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        width: var(--button);
-        height: 3rem;
-        transition: outline 200ms;
-        margin-top: 10.5rem;
-        margin-left: 5.5rem;
-        border-radius: 8px;
-        cursor: pointer ;
-  }
-
-  #reset-submit-btn{
-    display: flex;
-    justify-content: center;
-    font-weight: 400;
-    color: #ffff; 
-    text-decoration: none;  
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-#pwd-submit-btn > .reset-btn-text{
-  text-decoration: none;
-  color: #ffff;
-}
-
-
-
-#resetError{
-  color: #ff6774;
-  margin-left: 6rem;
-  margin-top: 0.5rem;
-  margin-bottom: -2rem;
-  font-size: 0.7rem; 
-  z-index: 1;  
-}
-
-#Resetpassword{
-  margin: 20rem;
-}
-
-#resetEmail{
-  margin-left: 6.4rem;
-  margin-top: -1.8rem;
+.resetLabel{
+  font-weight: 500;
+  padding-bottom: 10;
+  align-items: center;
+  font-size: 16px;
   color: var(--color-dark);
 }
 
+.resetForm{
+  padding-top: 30px;
+}
+
+.reset-btn{
+  background: linear-gradient(to right,
+  rgba(159, 79, 107, 100),
+  rgba(182, 77, 94, 100));
+color: var(--header-color);
+border-radius: 8px;
+width: var(--button-width);
+height: 15%;
+padding: 12;
+transition: outline 200ms;
+cursor: pointer;
+font-weight: 600;
+font-size: 20px;
+font-family: Poppins;
+position: relative;
+top: 40;
+}
 
 
-
-
-
-
-
-
-
- */
+img {
+  width: 70px;
+  height: 70px;
+}
