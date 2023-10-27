@@ -11,30 +11,21 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-height: 30rem;
-  gap: 4.5rem;
-  width: 100%;
-  margin-left: -1.5rem;
-  margin-right: -4rem;
-  border-radius: 8px;
-
-  overflow: auto;
+  gap: 0.5rem;
+  width: 14rem;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .container img {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 4.5rem;
-  height: 15rem;
-  margin-left: 0;
+  position: relative;
   width: 14rem;
-  height: 18rem;
+  height: 20rem;
   border-radius: 8px;
-  margin-right: -3rem;
-  margin-top: 10rem;
-  overflow: auto;
+  overflow-x: auto;
   border: 1px solid rgb(99, 99, 99);
+  margin-top: 6rem;
+
 }
 
 .trends {
@@ -211,19 +202,21 @@ height: 30rem;
   width: 100%;
 }
 
-.headerListing{
+.headerListing {
   gap: 150px;
   display: flex;
   flex-direction: column;
 }
 
-.headerListing > .headerList {
+.headerListing>.headerList {
   font-family: Poppins;
   font-size: 25px;
   font-weight: 700;
-  padding: 100;
+  padding: 50;
   gap: 50px;
+  height: 20rem;
   background-color: none;
+  margin-top: -1rem;
 }
 
 /* .headerList{
@@ -258,20 +251,20 @@ height: 30rem;
 #tabs li button {
   text-decoration: none;
   color: var(--color-bg-variant);
-  display: flex;
-  padding: 0.1rem 0.3rem;
+  /* display: flex;
+  padding: 0.1rem 0.3rem; */
   border-radius: 30px;
   /* margin-left: 0.1rem; */
   transition: var(--header-color) 200ms ease-in-out;
   background-color: transparent;
 }
 
-#tabs li {
+/* #tabs li {
   list-style: none;
   padding: 10px;
   border-radius: 30px;
   transition: var(--header-color) 200ms ease-in-out;
-}
+} */
 
 #tabs {
   list-style: none;
@@ -285,20 +278,18 @@ height: 30rem;
   text-decoration: none;
 }
 
-#tabs>li button:active,
+#tabs>li button:hover,
 #tabs>li button:focus {
-  display: flex;
-  flex-direction: row;
   background: var(--color-bg-variant);
   border-radius: 40px;
-  padding: 1.2rem 0.5rem;
+  padding-left: 8rem;
+  padding-right: 3rem;
   color: var(--header-color);
   height: 2rem;
   justify-content: center;
   align-items: center;
   transition: 200ms background-color ease-in-out;
-  gap: 0.5rem;
-  margin-left: -0.1rem;
+  font-weight: 700;
 }
 
 /*===============END OF HEADER================*/
@@ -308,9 +299,10 @@ height: 30rem;
   background-color: var(--color-bg-variant);
   width: 83rem;
   height: 20rem;
-  margin: 2rem 0 0 7.5rem;
   border-radius: 8px;
-  z-index: 1;
+  position: relative;
+  left: 300;
+  top: 20;
 }
 
 .trendingListing {

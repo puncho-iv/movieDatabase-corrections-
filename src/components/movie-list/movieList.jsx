@@ -21,6 +21,7 @@ import {
 
 const MovieList = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
+  const video_path = 'https://api.themoviedb.org/3/movie/now_playing';
   const [movies, setMovies] = useState([]);
   const [latest, setLatest] = useState([]);
   const [searchKey, setSearch] = useState([]);
@@ -179,17 +180,10 @@ const MovieList = () => {
               })}
             </ul>
           </li>
-        </header>
-      </div>
 
-      <div className="container">{renderMovies(movies)}</div>
-      <div className="container">{latestMovies(latest)}</div>
-
-      <div className="trailerVideos">
-        <header className="trendingListing">
-          <li className="trendingList">
+          <li className="headerList">
             Trending Today
-            <ul id="trendsTab">
+            <ul id="tabs">
               {category02.map((value) => {
                 return (
                   <li>
@@ -201,16 +195,16 @@ const MovieList = () => {
           </li>
         </header>
       </div>
-      <div
-        className="trendsContainer"
-        style={{
-          backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
-        }}
-      >
-        <div className="imageOverlay">
-          <div className="trends">{trendingMovies(trending)}</div>
-        </div>
+
+      <div className="container">{renderMovies(movies)}</div>
+      <div className="container">{latestMovies(latest)}</div>
+
+      <div className="trailerVideos">
+        <header className="trendingListing">
+
+        </header>
       </div>
+
     </div>
   );
 };
