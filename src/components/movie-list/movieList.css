@@ -81,25 +81,6 @@
 /*===============END OF CONTAINERS================*/
 
 /*===============HERO================*/
-/* .heroContent h1 {
-  margin: 15rem 0 18rem 7.5rem;
-  background: linear-gradient(to right, #f32170, #be421c, #cf23cf);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  font-size: 60px;
-  font-weight: 800;
-  font-family: Poppins;
-  max-width: 60%;
-}
-
-.heroContent p {
-  margin: -16rem 0 32rem 7.5rem;
-  font-size: 12px;
-  font-weight: 400;
-  font-family: Poppins;
-  max-width: 45%;
-} */
-
 .heroContent h1 {
   font-size: 60px;
   font-weight: 800;
@@ -172,8 +153,6 @@
 }
 
 #later {
-
-  /* margin: -10rem 68.5rem 11.5rem -70rem; */
   background-color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
   font-size: 14px;
@@ -259,13 +238,6 @@
   background-color: transparent;
 }
 
-/* #tabs li {
-  list-style: none;
-  padding: 10px;
-  border-radius: 30px;
-  transition: var(--header-color) 200ms ease-in-out;
-} */
-
 #tabs {
   list-style: none;
   font-weight: 700;
@@ -302,137 +274,8 @@
   border-radius: 8px;
   position: relative;
   left: 300;
-  top: 20;
+  top: 60;
 }
 
-.trendingListing {
-  display: flex;
-  flex-direction: row-wrap;
-  border: none;
-  background: transparent;
-  margin-top: 3.6rem;
-  margin-left: -0.5rem;
-  color: var(--header-color);
-}
 
-.trendingList {
-  font-family: Poppins;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-left: 1rem;
-  margin-top: 1rem;
-  background-color: transparent;
-}
 
-.trendingListing li {
-  position: relative;
-  display: flex;
-  row-gap: 2px;
-}
-
-.trendingList ul {
-  font-family: Poppins;
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  border: 2.5px solid var(--header-color);
-  border-radius: 30px;
-  align-items: center;
-  justify-content: center;
-  padding: 0.1rem;
-  margin-top: -0.1rem;
-  margin-left: 1rem;
-  height: 2.5rem;
-  background-color: transparent;
-  color: var(--header-color);
-}
-
-#trendsTab {
-  list-style: none;
-  font-weight: 700;
-  position: relative;
-  cursor: pointer;
-  border-radius: 30px;
-  align-items: center;
-  padding: 0.2rem 0 0.2rem 0;
-  margin-bottom: 2rem;
-  text-decoration: none;
-  background-color: transparent;
-}
-
-#trendsTab li button {
-  text-decoration: none;
-  color: var(--header-color);
-  display: flex;
-  padding: 0.1rem 0.3rem;
-  border-radius: 30px;
-  margin-left: 0.1rem;
-  transition: background-color 200ms ease-in-out;
-  background-color: transparent;
-}
-
-#trendsTab li {
-  list-style: none;
-  padding: 0.3rem 0rem;
-  border-radius: 30px;
-  transition: background-color 200ms ease-in-out;
-  margin-left: 0.1rem;
-}
-
-#trendsTab>li button:active,
-#trendsTab>li button:focus {
-  display: flex;
-  flex-direction: row;
-  background: var(--header-color);
-  border-radius: 40px;
-  padding: 1.2rem 0.5rem;
-  color: var(--color-bg-variant);
-  height: 2rem;
-  justify-content: center;
-  align-items: center;
-  transition: 200ms background-color ease-in-out;
-  gap: 0.5rem;
-  margin-left: -0.1rem;
-}
-
-/*===============END OF HEADER================*/
-
-/*===============SEARCH================*/
-#searchFrm #right-search {
-  display: block;
-  align-items: center;
-  margin: .5rem 0 0 5.5rem;
-  font-size: 26px;
-  color: var(--color-bg-variant);
-}
-
-#searchFrm input {
-  display: flex;
-  align-items: center;
-  height: 2.5rem;
-  width: 23rem;
-  margin: -2rem 0 0 -15rem;
-  font-family: Poppins;
-  font-size: 14px;
-  text-indent: 6%;
-  border-radius: 7px;
-  background: var(--header-color);
-  box-shadow: 0 0 10px var(--clr-gray300);
-}
-
-#searchFrm {
-  list-style: none;
-  font-weight: 600;
-  position: relative;
-  cursor: pointer;
-  padding: 3.5rem 1rem;
-  margin-left: -18rem;
-}
-
-#searchFrm {
-  margin: -6.5rem 0 0 60rem;
-}
-
-/*===============END OF SEARCH================*/

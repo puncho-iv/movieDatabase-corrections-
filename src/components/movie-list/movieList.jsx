@@ -21,15 +21,16 @@ import {
 
 const MovieList = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
-  const video_path = 'https://api.themoviedb.org/3/movie/now_playing';
+  const video_path = "https://api.themoviedb.org/3/movie/{movie_id}/videos";
   const [movies, setMovies] = useState([]);
   const [latest, setLatest] = useState([]);
   const [searchKey, setSearch] = useState([]);
   const [movieType, setMovieType] = useState("Streaming");
   const [freeToWatch, setFreeToWatch] = useState("Movies");
   const [selectedMovies, setSelectedMovies] = useState([]);
-  const [trending, setTrendingMovies] = useState([]);
-  const [videos, setVideos] = useState("Today");
+  const [selectedVideos, setSelectedVideos] = useState([]);
+  const [, setTrendingMovies] = useState([]);
+  const [videos, setVideos] = useState([]);
   const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
   const category01 = ["Movies", "TV"];
   const category02 = ["Today", "Trending"];
@@ -37,6 +38,11 @@ const MovieList = () => {
   const renderMovies = (movie) =>
     movies.map((movie) => (
       <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
+    ));
+
+  const renderVideos = (video) =>
+    movies.map((movie) => (
+      <VideoCard key={video.id} video={video} selectVideo={selectVideo} />
     ));
 
   //category changes//
@@ -93,8 +99,21 @@ const MovieList = () => {
     trendingMovies();
   }, []);
 
+  const selectVideo = async (video) => {
+    const data = trendingVideos(video.id);
+    console.log("movie data", data);
+    setSelectedVideos(video);
+  };
+
+  useEffect(() => {
+    trendingVideos();
+  }, []);
+
   const trendingMovies = (movie) =>
-    trending.map((movie) => <VideoCard key={movie.id} movie={movie} />);
+    movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
+
+  const trendingVideos = (video) =>
+    videos.map((video) => <VideoCard key={video.id} video={video} />);
 
   useEffect(() => {
     const getTrendingData = async (id) => {
@@ -117,38 +136,24 @@ const MovieList = () => {
   };
 
   return (
-    <div className="api">
-      <div className="search">
-        {/* <form id="searchFrm" onSubmit={searchMovie}>
-          <RiSearch2Line id="right-search" type="submit" />
-          <input
-            type="text"
-            placeholder="Lookup Movie..."
-            onChange={(e) => setSearch(e.target.value)}
-            value={searchKey}
-            onClick={searchMovie}
-          />
-        </form>
-        {searchKey} */}
-
-        <div
-          className="hero"
-          style={{
-            backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
-          }}
-        >
-          <div className="heroContent">
-            <h1>{selectedMovies.title}</h1>
-            <p>{selectedMovies.overview}</p>
-            <p>{selectedMovies.ratings}</p>
-          </div>
-          <div className="buttons">
-            <GoPlay id="play" />
-            <button className={"moviePlay"}>Play Trailer</button>
-          </div>
-
-          <button id="later">Watch Later</button>
+    <div>
+      <div
+        className="hero"
+        style={{
+          backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
+        }}
+      >
+        <div className="heroContent">
+          <h1>{selectedMovies.title}</h1>
+          <p>{selectedMovies.overview}</p>
+          <p>{selectedMovies.ratings}</p>
         </div>
+        <div className="buttons">
+          <GoPlay id="play" />
+          <button className={"moviePlay"}>Play Trailer</button>
+        </div>
+
+        <button id="later">Watch Later</button>
       </div>
 
       <div className="header">
@@ -199,12 +204,16 @@ const MovieList = () => {
       <div className="container">{renderMovies(movies)}</div>
       <div className="container">{latestMovies(latest)}</div>
 
-      <div className="trailerVideos">
-        <header className="trendingListing">
-
-        </header>
+      <div
+        className="trailerVideos"
+        style={{
+          backgroundImage: `url('${video_path}${selectedVideos.backdrop_path}')`,
+        }}
+      >
+        <header className="trendingListing"></header>
       </div>
 
+      <div className="container">{renderVideos(videos)}</div>
     </div>
   );
 };
