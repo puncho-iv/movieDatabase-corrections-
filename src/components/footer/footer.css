@@ -2,131 +2,140 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 #footer {
     --button-width: 280px;
-    --button-img: 100px;
+    --button-img: 30px;
     --textbox-width: 100rem;
-
     display: flex;
-    flex-flow: row wrap;
-    width: 100%;
+    align-items: center;
     height: 50vh;
     color: var(--header-color);
     background: linear-gradient(to right, rgba(159, 79, 107, 100), rgba(182, 77, 94, 100));
-    margin-top: 100rem;
+    justify-content: center;
 }
 
-.footer_container{
-    margin-left: -8rem;
+.footer_container {
+    display: flex;
+    gap: 2rem;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8rem;
 }
 
-.footer_logo img {
-    margin-top: 7rem;
-    margin-left: 20rem;
-    height: 35%;
-    width: 35%;
+.footerRight {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.txt {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.subscribe-box {
+    display: flex;
+    align-items: center;
+    width: var(--textbox-width);
+    max-width: var(--button-width);
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.subscribe-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+#send-subscribe {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 .footer-socials {
     display: flex;
     gap: 0.5rem;
-    margin-left: 62.5rem;
-    margin-top: -4.3rem;
-    font-size: 1.5rem;
+    margin-top: 1rem;
 }
 
-#socials>.permalinks {
-    display: flex;
-    flex-direction: row;
+.permalinks {
+    color: white;
+    font-size: var(--button-img);
 }
 
-em {
-    font-weight: 400;
+.footer-socials a:hover {
+    color: rgba(255, 255, 255, 0.7);
 }
 
-#socials a {
-    color: var(--color-bg);
+#footer-header {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-.subscribe-box input {
-    border-radius: 0.5rem;
-    height: 6vh;
-    width: 20%;
-    background: var(--color-bg);
-    text-indent: 1rem;
-    margin-left: 65rem;
-    margin-top: -8rem;
+.footer_container ul {
+    list-style: none;
 }
 
-.subscribe-box .send-subscribe {
-    margin-top: -1rem;
-    margin-left: -2rem;
-    color: var(--color-dark);
-}
-
-#send-subscribe {
-    color: var(--color-dark);
-    margin-left: 83rem;
-    margin-top: -7rem;
-}
-
-.subscribe-box {
-    margin-left: -2.5rem;
-    margin-top: 9rem;
-}
-
-.footer-permalinks {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.2rem;
-    margin-left: 35rem;
-    margin-top: -8rem;
-    font-weight: 400;
-}
-
-.footer-mid-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.2rem;
-    margin: -11rem 0 0 47rem;
-    font-weight: 400;
-}
-
-.footerRight{
-    margin-left: -6.5rem;
-    margin-top: -3rem;
-}
-
-#footer-menu {
-    text-decoration: none;
-    color: var(--color-bg);
+.footer_container ul li {
+    margin-bottom: 0.5rem;
 }
 
 #footer-copyright {
-    color: var(--color-bg);
-    font-weight: 700;
-    margin-top: 5.5rem;
-    font-size: 1rem;
-    margin-left: 36rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: -4rem;
+    margin-bottom: 0;
     font-weight: 600;
 }
 
-.txt{
-    font-size: 1.1rem;
-    margin-left: 62.5rem;
-    margin-top: -10rem;
-    font-weight: 700;
-    color: var();
-}
-
-#footer-header{
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-left: 1rem;
+#footer-copyright em {
+    font-style: normal;
 }
 
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    #footer{
+        display: none;
+    }
+    #footer-copyright{
+        margin-top: 5rem;
+        background-color: var(--color-secondary);
+    }
+    #footer-copyright em {
+        font-style: normal;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #footer{
+        display: none;
+    }
+    #footer-copyright{
+        margin-top: 5rem;
+        background-color: var(--color-secondary);
+    }
+    #footer-copyright em {
+        font-style: normal;
+        color: white;
+        text-decoration: none;
+    }
+}

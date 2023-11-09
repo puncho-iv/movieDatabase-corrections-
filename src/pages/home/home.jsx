@@ -7,7 +7,7 @@ import './home.css'
 
 const Home = () => {
   return (
-   <section id='home'>
+   <div id='home'>
 
     <Nav/>  
 
@@ -15,7 +15,7 @@ const Home = () => {
     
     <Footer id='footer'/>  
 
-   </section>
+   </div>
   )
 }
 

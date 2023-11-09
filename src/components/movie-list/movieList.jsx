@@ -4,9 +4,9 @@ import VideoCard from "../videos/videoCard";
 import "./movieList.css";
 import { GoPlay } from "react-icons/go";
 import YouTube from "react-youtube";
-import { RiSearch2Line } from "react-icons/ri";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade } from 'swiper';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade } from "swiper";
 
 import {
   getInTheatres,
@@ -16,24 +16,26 @@ import {
   getTopRatedMovies,
   getTrendingMovies,
   getTrendingToday,
-  getTV,
-} from "../../api/movieService"; 
+} from "../../api/movieService";
 
 const MovieList = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
+
   const [movies, setMovies] = useState([]);
   const [latest, setLatest] = useState([]);
-  const [searchKey, setSearch] = useState([]);
   const [movieType, setMovieType] = useState("Streaming");
   const [freeToWatch, setFreeToWatch] = useState("Movies");
+  const [videoType, setVideoType] = useState("Today");
   const [selectedMovies, setSelectedMovies] = useState([]);
-  const [trending, setTrendingMovies] = useState([]);
-  const [videos, setVideos] = useState("Today");
+  const [selectedVideos, setSelectedVideos] = useState([]);
+  const [, setTrendingMovies] = useState([]);
+  const [videos, setVideos] = useState([]);
+
   const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
   const category01 = ["Movies", "TV"];
   const category02 = ["Today", "Trending"];
 
-  const renderMovies = (movie) =>
+  const renderMovies = (movies) =>
     movies.map((movie) => (
       <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
     ));
@@ -63,7 +65,7 @@ const MovieList = () => {
     getData();
   }, [movieType]);
 
-  const latestMovies = (movie) =>
+  const latestMovies = (latest) =>
     latest.map((movie) => (
       <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
     ));
@@ -71,16 +73,35 @@ const MovieList = () => {
   useEffect(() => {
     const getSecondData = async () => {
       if (freeToWatch === "Movies") {
-        const { data } = await getMovies();
+        const { data } = await getTopRatedMovies();
         setLatest(data.results);
       } else if (freeToWatch === "TV") {
-        const { data } = await getTV();
+        const { data } = await getTrendingMovies();
         setLatest(data.results);
       }
     };
 
     getSecondData();
   }, [freeToWatch]);
+
+  const movieVideos = (videos) =>
+    videos.map((movie) => (
+      <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
+    ));
+
+  useEffect(() => {
+    const getVideoData = async () => {
+      if (videoType === "Today") {
+        const { data } = await getMovies();
+        setVideos(data.results);
+      } else if (videoType === "Trending") {
+        const { data } = await getTrendingToday();
+        setVideos(data.results);
+      }
+    };
+
+    getVideoData();
+  }, [videoType]);
 
   const selectMovie = async (movie) => {
     const data = trendingMovies(movie.id);
@@ -93,65 +114,41 @@ const MovieList = () => {
   }, []);
 
   const trendingMovies = (movie) =>
-    trending.map((movie) => <VideoCard key={movie.id} movie={movie} />);
+    movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
 
-  useEffect(() => {
-    const getTrendingData = async (id) => {
-      if (videos === "Today") {
-        const { data } = await getTrendingMovies();
-        setTrendingMovies(data.results);
-      } else if (videos === "Trending") {
-        const { data } = await getTrendingToday();
-        setTrendingMovies(data.results);
-      }
-    };
-
-    getTrendingData();
-  }, [videos]);
-
-  const searchMovie = (lookup) => {
-    if (lookup.key === "Enter") {
-      console.log("hello");
-    }
+  const selectVideo = async (video) => {
+    const data = trendingMovies(video.id);
+    console.log("movie data", data);
+    setSelectedVideos(video);
   };
 
+  useEffect(() => {
+    trendingMovies();
+  }, []);
+
   return (
-    <div className="api">
-      <div className="search">
-        <form id="searchFrm" onSubmit={searchMovie}>
-          <RiSearch2Line id="right-search" type="submit" />
-          <input
-            type="text"
-            placeholder="Lookup Movie..."
-            onChange={(e) => setSearch(e.target.value)}
-            value={searchKey}
-            onClick={searchMovie}
-          />
-        </form>
-        {searchKey}
-
-        <div
-          className="hero"
-          style={{
-            backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
-          }}
-        >
-          <div className="heroContent">
-            <h1>{selectedMovies.title}</h1>
-            <p>{selectedMovies.overview}</p>
-            <p>{selectedMovies.ratings}</p>
-          </div>
-          <div className="buttons">
-            <button className={"moviePlay"}>Play Trailer</button>
-            <GoPlay id="play" />
-          </div>
-
-          <button id="later">Watch Later</button>
+    <div>
+      <div
+        className="hero"
+        style={{
+          backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
+        }}
+      >
+        <div className="heroContent">
+          <h1>{selectedMovies.title}</h1>
+          <p>{selectedMovies.overview}</p>
+          <p></p>
         </div>
+        <div className="buttons">
+          <GoPlay id="play" />
+          <button className={"moviePlay"}>Play Trailer</button>
+        </div>
+
+        <button id="later">Watch Later</button>
       </div>
 
       <div className="header">
-        <header className="headerListing" id="header-menu">
+        <header className="headerListing">
           <li className="headerList">
             What's Popular
             <ul id="tabs">
@@ -179,21 +176,14 @@ const MovieList = () => {
               })}
             </ul>
           </li>
-        </header>
-      </div>
 
-      <div className="container">{renderMovies(movies)}</div>
-      <div className="container">{latestMovies(latest)}</div>
-
-      <div className="trailerVideos">
-        <header className="trendingListing">
-          <li className="trendingList">
+          <li className="headerList">
             Trending Today
-            <ul id="trendsTab">
+            <ul id="tabs">
               {category02.map((value) => {
                 return (
                   <li>
-                    <button onClick={() => setVideos(value)}>{value}</button>
+                    <button onClick={() => setVideoType(value)}>{value}</button>
                   </li>
                 );
               })}
@@ -201,15 +191,18 @@ const MovieList = () => {
           </li>
         </header>
       </div>
+
+      <div className="container">{renderMovies(movies)}</div>
+      <div className="container">{latestMovies(latest)}</div>
+      <div className="container">{movieVideos(videos)}</div>
+
       <div
-        className="trendsContainer"
+        className="trailerVideos"
         style={{
-          backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
+          backgroundImage: `url('${image_path}${selectedVideos.backdrop_path}')`,
         }}
       >
-        <div className="imageOverlay">
-          <div className="trends">{trendingMovies(trending)}</div>
-        </div>
+        <header className="trendingListing"></header>
       </div>
     </div>
   );

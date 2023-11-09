@@ -19,80 +19,75 @@ function Reset() {
   };
 
   const [resetPass, setResetPass] = useState(false);
-  const [resetForm, setResetForm] = useState(false);
+  const [, setResetForm] = useState(false);
 
   const resetPassfrm = () => {
-    setResetPass(!resetPass)
+    setResetPass(!resetPass);
     setResetForm((resetForm) => !resetForm);
-  }
+  };
 
-   return (
+  return (
     <section id="reset">
-      <div className="reset_container">
-        <h3 id="reset_header">Reset Account</h3>
-        <img src={logo} alt="signup_logo" />
-      </div>
-
-      <div className="reset-image" id="log-image">
-        <img src={resetImage} alt="reset-img" className="reset-image-column" />
-        <div className="reset-content">
-          <h1>Don't get logged out again</h1>
-          <p>Lorem ipsum..</p>  
-        </div>
+      <div className="reset-image">
+        <img src={resetImage} alt="reset-img" className="bg-img" />
       </div>
 
       <div className="reset-col2">
-      {!resetPass && (
-      <form className="resetForm" onClick={handleSubmit(onSubmit)}>
-        <label className="resetLabel">Email Address</label>
-        <input
-          className="reset-input"
-          type="text"
-          placeholder="Enter your email address"
-          {...register("email", {
-            required: true,
-            pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
-          })}
-        />
-        <MdEmail id="resetEmail" />
-        <error id="resetError">
-          {errors.email?.type === "required" && "*Email is required"}
-        </error>
-        
-        <button className="reset-btn" onClick={resetPassfrm}>Next</button>
-      
-      </form>
-      )}
-             
-      {resetPass && (
-      <form className="resetPass" onSubmit={handleSubmit(onSubmit)}>
-        <label className="reset-password">Password</label>
-        <input
-          className="resetinput"
-          type="password"
-          name="password"
-          {...register("password", {
-            required: true,
-            minLength: 5,
-            maxLength: 20,
-          })}
-        />
-        <error>
-          {errors.password?.type ===
-            "Entered password is less than 5 characters"}
-        </error>
+        <div className="reset_logo">
+          <img src={logo} alt="signup_logo" />
+        </div>
+        <h3 id="reset_header">Reset Account</h3>
+        {!resetPass && (
+          <form className="resetForm" onClick={handleSubmit(onSubmit)}>
+            
+            <label className="resetLabel">Email Address</label>
+            <input
+              className="reset-input"
+              type="text"
+              // placeholder="Enter your email address"
+              {...register("email", {
+                required: true,
+                pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
+              })}
+            />
+            {/* <MdEmail id="resetEmail" /> */}
+            <error id="resetError">
+              {errors.email?.type === "required" && "*Email is required"}
+            </error>
 
-        <button className="reset-btn2">
-          <Link to="/reset" id="resetLink">
-            Send Code
-          </Link>
-        </button>
+            <button className="reset-btn" onClick={resetPassfrm}>
+              Next
+            </button>
+          </form>
+        )}
 
+        {resetPass && (
+          <form className="resetPass" onSubmit={handleSubmit(onSubmit)}>
+            <label className="reset-password">Password</label>
+            <input
+              className="resetinput"
+              type="password"
+              name="password"
+              {...register("password", {
+                required: true,
+                minLength: 5,
+                maxLength: 20,
+              })}
+            />
+            <error>
+              {errors.password?.type ===
+                "Entered password is less than 5 characters"}
+            </error>
 
-      </form>
-      )}
-      </div> 
-      <Footer />
+            <button className="reset-btn2">
+              <Link to="/reset" id="resetLink">
+                Send Code
+              </Link>
+            </button>
+          </form>
+        )}
+      </div>
+      {/* <Footer /> */}
     </section>
   );
 }
