@@ -10,12 +10,14 @@ export const category = {
 export const movieType = {
   upcoming: 'upcoming',
   popular: 'popular',
-  top_rated: 'top_rated'
+  top_rated: 'top_rated',
+  now_playing: 'now_playing'
 }
 
 export const tvType = {
   popular: 'popular',
   top_rated: 'top_rated',
+  airing_today: 'airing_today',
   on_the_air: 'on_the_air'
 }
 
@@ -56,6 +58,7 @@ const tmdbApi = {
     return axiosClient.get(url, {params: {}});
   },
 
+
 }
 export function getTopRatedMovies() {
   return apiConfig.get("/tv/top_rated?");
@@ -89,8 +92,16 @@ export function getTrendingToday() {
   return apiConfig.get("/tv/{tv_id}/season/{season_number}/videos?");
 }
 
-// export function getFetchMovies() {
-//   return tmdb.get ("/movie/{movie_id}/videos?")
-// }
+export function getVideos() {
+  return apiConfig.get("/")
+}
+
+export function getMovieVideos() {
+  return apiConfig.get("/movie/{movie_id}/videos");
+}
+
+export function getOnTheAir() {
+  return apiConfig.get("/tv/on_the_air?");
+}
 
 export default tmdbApi;

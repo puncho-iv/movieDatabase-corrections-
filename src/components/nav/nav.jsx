@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./nav.css";
 import logo from "../../images/logo.svg";
-import { HiUserCircle } from "react-icons/hi";
-import { BsFillBellFill } from "react-icons/bs";
-import { BsDatabaseFillAdd } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { RiSearch2Line } from "react-icons/ri";
 
@@ -61,32 +58,22 @@ class Nav extends Component {
                   </ul>
           </li>
         </ul>
+
+        <div className="avatar" id="avatar-menu">
+
+
+          <Link to="/subscription">
+            <button className="subscription_btn">Subscribe Now</button>
+          </Link>
+        </div>
+
+        
         <div className="nav_toggler">
           <div className="line1"></div>
           <div className="line2"></div>
           <div className="line3 "></div>
         </div>
 
-        <div className="avatar" id="avatar-menu">
-          {/* <li id="avatar-shape">
-                <BsDatabaseFillAdd id="avatar-icon" />
-              </li>
-              <li id="avatar-shape">
-                <BsFillBellFill id="avatar-icon" />
-              </li>
-              <li id="avatar-shape">
-                <HiUserCircle id="avatar-icon" />
-                <ul className="nav-item-drop">
-                  {this.state.avatarMenu.map((avatarMenu) => (
-                    <li>{avatarMenu}</li>
-                  ))}
-                </ul>
-              </li> */}
-
-          <Link to="/subscription">
-            <button className="subscription_btn">Subscribe Now</button>
-          </Link>
-        </div>
       </nav>
     );
   }

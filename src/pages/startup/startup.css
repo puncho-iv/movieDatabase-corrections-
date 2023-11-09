@@ -51,65 +51,6 @@
     display: flex;
     
 }
-/* 
-.custom-btn {
-    background: var(--header-color);
-    padding: 0.5rem 1rem;
-    border-radius: 100px;
-    max-width: var(--button-width);
-    transition: outline 200ms;
- 
-} */
-
-/* .custom-btn > .custom-btn-img {
-    width: 30px;
-    height: 30px;
-} */
-
-/* .custom-btn > .custom-btn-text {
-    margin-left: 1.5rem;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: var(--color-dark);
-    font-weight: 500;
-
-} */
-
-/* .custom-btn:hover {
-    background: transparent;
-    outline: 4px solid var(--header-color);
-    color: var(--header-color);
-}
-
-.custom-btn>.custom-btn-text:hover {
-    color: var(--header-color);
-}
-
-#apple-signin-btn,
-#mobile-signin-btn {
-    margin-top: 1rem;
-    width: 100%;
-}
-
-#apple-signin-btn>.custom-btn-img {
-    margin-left: -1.5rem;
-}
-
-#mobile-signin-btn>.custom-btn-text {
-    margin-left: 0.5rem;
-    font-weight: 700;
-    color: var(--header-color);
-}
-
-#mobile-signin-btn {
-    background: var(--color-dark);
-    color: var(--header-color);
-    width: 100%;
-} */
-
-/* #signin-btn>.custom-btn-text {
-    margin-left: 0.5rem;
-} */
 
 .custom-btn-img{
     width: 25px;
@@ -262,14 +203,6 @@ em {
         width: 100%;
     }
 
-    /* .links-container {
-        padding-top: 3rem;
-        margin-top: 0rem;
-    } */
-    /* .left-pane img{
-        min-height: 100vh;
-    } */
-
     .left-pane {
         flex: 3;
     }
@@ -283,9 +216,6 @@ em {
         display: flex;
         flex-direction: column;
     }
-
-
-
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1280px) {

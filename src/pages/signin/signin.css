@@ -108,7 +108,7 @@
 }
 
 .form_signin {
-  width: 100%;
+  width: 70%;
   color: #333;
   font-weight: 500;
   font-size: 18px;
@@ -147,7 +147,7 @@
 }
 
 #pwd_eye {
-  margin: -3rem 0 0 19rem;
+  margin: -3rem 0 0 13rem;
   display: flex;
   color: var(--color-dark);
 }
@@ -162,7 +162,7 @@
 #remember {
   font-size: 14px;
   font-weight: 400;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
 }
 
 #bottom-links-checkbox {
@@ -225,6 +225,7 @@ span:hover {
   /* margin-left: 12rem; */
   text-decoration: none;
   color: var(--color-secondary);
+
 }
 
 #error {
@@ -353,6 +354,7 @@ span:hover {
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
+    
   }
 
   .button-signin {

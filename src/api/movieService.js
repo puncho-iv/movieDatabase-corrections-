@@ -30,9 +30,10 @@ export function getTrendingMovies() {
 
 export function getTrendingToday() {
   return apiConfig.get("/tv/{tv_id}/season/{season_number}/videos?");
+};
+
+export function getMovieVideos() {
+  return apiConfig.get("/movie/{movie_id}/videos");
 }
 
-export function getFetchMovies() {
-  return apiConfig.get ("/movie/{movie_id}/videos?")
-}
 

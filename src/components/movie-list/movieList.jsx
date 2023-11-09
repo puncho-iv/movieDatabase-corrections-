@@ -16,33 +16,28 @@ import {
   getTopRatedMovies,
   getTrendingMovies,
   getTrendingToday,
-  getTV,
 } from "../../api/movieService";
 
 const MovieList = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
-  const video_path = "https://api.themoviedb.org/3/movie/{movie_id}/videos";
+
   const [movies, setMovies] = useState([]);
   const [latest, setLatest] = useState([]);
-  const [searchKey, setSearch] = useState([]);
   const [movieType, setMovieType] = useState("Streaming");
   const [freeToWatch, setFreeToWatch] = useState("Movies");
+  const [videoType, setVideoType] = useState("Today");
   const [selectedMovies, setSelectedMovies] = useState([]);
   const [selectedVideos, setSelectedVideos] = useState([]);
   const [, setTrendingMovies] = useState([]);
   const [videos, setVideos] = useState([]);
+
   const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
   const category01 = ["Movies", "TV"];
   const category02 = ["Today", "Trending"];
 
-  const renderMovies = (movie) =>
+  const renderMovies = (movies) =>
     movies.map((movie) => (
       <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
-    ));
-
-  const renderVideos = (video) =>
-    movies.map((movie) => (
-      <VideoCard key={video.id} video={video} selectVideo={selectVideo} />
     ));
 
   //category changes//
@@ -70,7 +65,7 @@ const MovieList = () => {
     getData();
   }, [movieType]);
 
-  const latestMovies = (movie) =>
+  const latestMovies = (latest) =>
     latest.map((movie) => (
       <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
     ));
@@ -78,16 +73,35 @@ const MovieList = () => {
   useEffect(() => {
     const getSecondData = async () => {
       if (freeToWatch === "Movies") {
-        const { data } = await getMovies();
+        const { data } = await getTopRatedMovies();
         setLatest(data.results);
       } else if (freeToWatch === "TV") {
-        const { data } = await getTV();
+        const { data } = await getTrendingMovies();
         setLatest(data.results);
       }
     };
 
     getSecondData();
   }, [freeToWatch]);
+
+  const movieVideos = (videos) =>
+    videos.map((movie) => (
+      <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
+    ));
+
+  useEffect(() => {
+    const getVideoData = async () => {
+      if (videoType === "Today") {
+        const { data } = await getMovies();
+        setVideos(data.results);
+      } else if (videoType === "Trending") {
+        const { data } = await getTrendingToday();
+        setVideos(data.results);
+      }
+    };
+
+    getVideoData();
+  }, [videoType]);
 
   const selectMovie = async (movie) => {
     const data = trendingMovies(movie.id);
@@ -99,41 +113,18 @@ const MovieList = () => {
     trendingMovies();
   }, []);
 
+  const trendingMovies = (movie) =>
+    movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
+
   const selectVideo = async (video) => {
-    const data = trendingVideos(video.id);
+    const data = trendingMovies(video.id);
     console.log("movie data", data);
     setSelectedVideos(video);
   };
 
   useEffect(() => {
-    trendingVideos();
+    trendingMovies();
   }, []);
-
-  const trendingMovies = (movie) =>
-    movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
-
-  const trendingVideos = (video) =>
-    videos.map((video) => <VideoCard key={video.id} video={video} />);
-
-  useEffect(() => {
-    const getTrendingData = async (id) => {
-      if (videos === "Today") {
-        const { data } = await getTrendingMovies();
-        setTrendingMovies(data.results);
-      } else if (videos === "Trending") {
-        const { data } = await getTrendingToday();
-        setTrendingMovies(data.results);
-      }
-    };
-
-    getTrendingData();
-  }, [videos]);
-
-  const searchMovie = (lookup) => {
-    if (lookup.key === "Enter") {
-      console.log("hello");
-    }
-  };
 
   return (
     <div>
@@ -146,7 +137,7 @@ const MovieList = () => {
         <div className="heroContent">
           <h1>{selectedMovies.title}</h1>
           <p>{selectedMovies.overview}</p>
-          <p>{selectedMovies.ratings}</p>
+          <p></p>
         </div>
         <div className="buttons">
           <GoPlay id="play" />
@@ -192,7 +183,7 @@ const MovieList = () => {
               {category02.map((value) => {
                 return (
                   <li>
-                    <button onClick={() => setVideos(value)}>{value}</button>
+                    <button onClick={() => setVideoType(value)}>{value}</button>
                   </li>
                 );
               })}
@@ -203,17 +194,16 @@ const MovieList = () => {
 
       <div className="container">{renderMovies(movies)}</div>
       <div className="container">{latestMovies(latest)}</div>
+      <div className="container">{movieVideos(videos)}</div>
 
       <div
         className="trailerVideos"
         style={{
-          backgroundImage: `url('${video_path}${selectedVideos.backdrop_path}')`,
+          backgroundImage: `url('${image_path}${selectedVideos.backdrop_path}')`,
         }}
       >
         <header className="trendingListing"></header>
       </div>
-
-      <div className="container">{renderVideos(videos)}</div>
     </div>
   );
 };

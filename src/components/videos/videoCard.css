@@ -13,5 +13,7 @@
 
 .videoCard{
 position: absolute;
+top: 20;
+background-color: red;
 }
 
