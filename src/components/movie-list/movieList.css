@@ -133,6 +133,7 @@
   height: 60px;
   border-radius: 50px;
   padding-left: 30;
+  
 }
 
 #play {
@@ -149,8 +150,8 @@
   position: absolute;
   left: 100;
   align-items: center;
-
-  gap: 10;
+  
+  bottom: 200;
 }
 
 #later {
@@ -167,6 +168,7 @@
   justify-content: center;
   border-radius: 50px;
   position: absolute;
+  left: 19rem;
 }
 
 /*===============END OF HERO================*/
