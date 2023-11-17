@@ -142,9 +142,10 @@ const MovieList = () => {
         <div className="buttons">
           <GoPlay id="play" />
           <button className={"moviePlay"}>Play Trailer</button>
+          <button id="later">Watch Later</button>
         </div>
 
-        <button id="later">Watch Later</button>
+     
       </div>
 
       <div className="header">
@@ -187,7 +188,7 @@ const MovieList = () => {
                   </li>
                 );
               })}
-            </ul>
+            </ul>heroCon
           </li>
         </header>
       </div>
