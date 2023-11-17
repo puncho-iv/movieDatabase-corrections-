@@ -21,6 +21,7 @@
 .nav-logo img {
   width: 70px;
   height: 70px;
+  align-items: center;
 }
 
 .nav_menu {
@@ -117,6 +118,10 @@
 
 .nav-item-drop li {
   display: block;
+}
+
+.search-btn {
+  display: none;
 }
 
 
