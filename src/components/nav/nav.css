@@ -21,6 +21,7 @@
 .nav-logo img {
   width: 70px;
   height: 70px;
+  align-items: center;
 }
 
 .nav_menu {
@@ -31,14 +32,14 @@
   cursor: pointer;
 }
 
-.nav_toggler{
+.nav_toggler {
   cursor: pointer;
   display: none;
 }
 
-.nav_toggler div{
-  width: 2rem;
-  height: 0.2rem;
+.nav_toggler div {
+  width: 26px;
+  height: 2px;
   margin: 0.4rem;
   background: var(--header-color);
 }
@@ -58,7 +59,7 @@
   justify-content: flex-start;
 }
 
-.subscription_btn{
+.subscription_btn {
   color: var(--color-dark);
   font-size: 18px;
   font-weight: 500;
@@ -70,7 +71,7 @@
   border-radius: 8px;
 }
 
-.subscription_btn:hover{
+.subscription_btn:hover {
   background-color: transparent;
   outline: 3px solid var(--header-color);
   color: var(--header-color);
@@ -78,7 +79,7 @@
 
 }
 
-#search input {
+.search-box input {
   background: var(--header-color);
   border-radius: 6px;
   border: 1px solid var(--header-color);
@@ -87,12 +88,12 @@
   text-indent: 10%;
 }
 
-#search input:focus {
- border: 2px;
+.search-box input:focus {
+  border: 2px;
   border-color: var(--color-dark);
 }
 
-#right-search{
+#right-search {
   color: var(--color-dark);
   position: absolute;
   top: 28;
@@ -101,7 +102,7 @@
   padding: 6;
 }
 
-.nav-item-drop{
+.nav-item-drop {
   display: none;
   position: absolute;
   background-color: var(--header-color);
@@ -109,63 +110,105 @@
   z-index: 1;
 }
 
-.nav-item-drop:hover{
+.nav-item-drop:hover {
   position: relative;
   display: block;
   background-color: var(--header-color);
 }
 
-.nav-item-drop li{
+.nav-item-drop li {
   display: block;
+}
+
+.search-btn {
+  display: none;
 }
 
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  .nav{
+  .nav {
     display: flex;
     justify-content: flex-start;
     justify-content: space-around;
   }
-  .nav > .nav_toggler{
+
+  .nav>.nav_toggler {
     display: block;
+    background: transparent;
   }
-  .nav_menu{
+
+  .nav_menu {
     display: none;
   }
-  .subscription_btn{
+
+  .subscription_btn {
     display: none;
   }
-  #search input{
+
+  .search-wrapper input {
     max-width: 250px;
-    text-indent: 14%;
+    text-indent: 15%;
     padding: 20;
+    background-color: transparent;
+    color: var(--header-color);
+    border: none;
+    font-family: Poppins;
   }
-  #right-search{
-    top: 20;
-  }  
+
+  .search-wrapper input:focus,
+  .search-wrapper input:active{
+    border: 1px solid var(--header-color);
+  }
+
+  #right-search {
+    top: 11;
+    opacity: 0.5;
+  }
+  #right-search:hover {
+    top: 11;
+    opacity: 1;
+  }
+
+  .search-btn img{
+    width: 20px;
+    height: 20px;
+  }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .nav{
+  .nav {
     display: flex;
     justify-content: flex-start;
     justify-content: space-around;
   }
-  .nav_menu{
+
+  .nav_menu {
     display: none;
   }
-  .nav > .nav_toggler{
+
+  .nav>.nav_toggler {
     display: block;
   }
-  #search input {
+
+  .search-wrapper input {
     max-width: 400px;
     text-indent: 8%;
     padding: 20;
   }
-  #right-search{
+
+  .search-wrapper img {
     top: 20;
+    opacity: 0.5;
   }
-  .subscription_btn{
+
+  .search-wrapper img:hover,
+  .search-wrapper img:focus-visible{
+    opacity: 1;
+    color: "#DCDCDC";
+  }
+
+  .subscription_btn {
     color: var(--color-dark);
     font-size: 18px;
     font-weight: 500;
@@ -173,6 +216,10 @@
     background-color: var(--header-color);
     padding: 10;
     border-radius: 8px;
+  }
+  .search-box {
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -190,4 +237,8 @@ li {
 
 a {
   text-decoration: none;
+}
+
+button{
+  background-color: transparent;
 }
