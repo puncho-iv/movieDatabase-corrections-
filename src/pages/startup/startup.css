@@ -86,6 +86,7 @@
     color: var(--color-dark);
     font-size: 18px;
     align-items: center;
+    background-color: var(--header-color);
 }
 
 #signin-btn:hover{
