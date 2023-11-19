@@ -188,7 +188,7 @@ const MovieList = () => {
                   </li>
                 );
               })}
-            </ul>heroCon
+            </ul>
           </li>
         </header>
       </div>
