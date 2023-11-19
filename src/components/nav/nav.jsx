@@ -9,7 +9,7 @@ import menuIcon from "../../images/menu.png";
 const Nav = () => {
   const [openMenu, setOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
-  const [showSearchInput, setShowSearchInput] = useState(false);
+
 
   const menuItems = [
     { name: "Action", link: "/action" },
