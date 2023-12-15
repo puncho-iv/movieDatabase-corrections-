@@ -6,18 +6,18 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import asset from "../../images/asset.jpg";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 function Signin() {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+  // const {
+  //   handleSubmit,
+  //   register,
+  //   formState: { errors },
+  // } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  // };
 
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(AiFillEyeInvisible);
@@ -58,8 +58,8 @@ function Signin() {
 
         <form
           className="form_signin"
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
+          // onSubmit={handleSubmit(onSubmit)}
+          // noValidate
           autoComplete="off"
         >
           <div className="user_details">
@@ -68,15 +68,15 @@ function Signin() {
               className="user-input"
               type="email"
               placeholder="Enter your username..."
-              {...register("email", {
-                required: true,
-                pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
-              })}
+              // {...register("email", {
+              //   required: true,
+              //   pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
+              // })}
             />
             <MdEmail className="email_image" />
-            <error id="error">
+            {/* <error id="error">
               {errors.email?.type === "required" && "*Enter email address"}
-            </error>
+            </error> */}
           </div>
 
           <label className="signin-label2">PASSWORD</label>
@@ -85,20 +85,20 @@ function Signin() {
             type={type}
             name="newPassword"
             placeholder="Enter your password..."
-            {...register("newPassword", {
-              required: true,
-              minLength: 5,
-              maxLength: 20,
-            })}
+            // {...register("newPassword", {
+            //   required: true,
+            //   minLength: 5,
+            //   maxLength: 20,
+            // })}
           />
           <RiLockPasswordFill className="password_image" />
           <span id="pwd_eye" onClick={handleToggle}>
             <AiFillEye icon={icon} size={18} />
           </span>
 
-          <error id="new">
+          {/* <error id="new">
             {errors.newPassword?.type === "required" && "*Enter your password"}
-          </error>
+          </error> */}
 
           <div className="rowFlex">
             <div className="bottom">
@@ -113,9 +113,13 @@ function Signin() {
             </div>
           </div>
 
-          <button className="button-signin" Link to="/home" type="submit">
+          {/* <button className="button-signin" Link to="/home" type="submit">
             Submit
-          </button>
+          </button> */}
+
+          <Link to="/home">
+            <button className="button-signin">Submit</button>
+          </Link>
         </form>
       </div>
     </section>

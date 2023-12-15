@@ -7,15 +7,15 @@ import { useForm } from "react-hook-form";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 function Signup() {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+  // const {
+  //   handleSubmit,
+  //   register,
+  //   formState: { errors },
+  // } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  // };
 
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(AiFillEyeInvisible);
@@ -57,7 +57,7 @@ function Signup() {
           <img src={logo} alt="logo" />
         </div>
 
-        <form className="signup-form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="signup-form">
           <h3 id="createAccount">Create Account!</h3>
 
           <div className="signup-label" id="signup-textbox">
@@ -66,14 +66,14 @@ function Signup() {
               className="signup-input-email"
               type="email"
               name="email"
-              {...register("email", {
-                required: true,
-                pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
-              })}
+              // {...register("email", {
+              //   required: true,
+              //   pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
+              // })}
             />
-            <error id="emailErr">
+            {/* <error id="emailErr">
               {errors.email?.type === "required" && "*Email is required"}
-            </error>
+            </error> */}
           </div>
 
           <div className="signup-label" id="password-textbox">
@@ -82,20 +82,20 @@ function Signup() {
               className="signup-input-password"
               type={type}
               name="new_password"
-              {...register("newPassword", {
-                required: true,
-                minLength: 5,
-                maxLength: 20,
-              })}
+              // {...register("newPassword", {
+              //   required: true,
+              //   minLength: 5,
+              //   maxLength: 20,
+              // })}
             />
 
             <span id="pwdEye" onClick={handleToggle}>
               <AiFillEye icon={icon} size={18} />
             </span>
 
-            <error id="choose">
+            {/* <error id="choose">
               {errors.newPassword?.type === "required" && "*Choose a password"}
-            </error>
+            </error> */}
           </div>
 
           <div className="signup-label" id="confirm-password-textbox">
@@ -104,21 +104,25 @@ function Signup() {
               className="signup-input-confirm"
               type="password"
               name="confirm_password"
-              {...register("confirmPassword", {
-                required: true,
-                minLength: 5,
-                maxLength: 20,
-              })}
+              // {...register("confirmPassword", {
+              //   required: true,
+              //   minLength: 5,
+              //   maxLength: 20,
+              // })}
             />
-            <error id="confirm">
+            {/* <error id="confirm">
               {errors.confirmPassword?.type === "required" &&
                 "*Password does not match"}
-            </error>
+            </error> */}
           </div>
           <div>
-            <button Link to="/signin" className="button" type="submit">
+            {/* <button Link to="/signin" className="button" type="submit">
               Sign up
-            </button>
+            </button> */}
+
+            <Link to="/signin">
+              <button className="button">Sign up</button>
+            </Link>
           </div>
         </form>
       </div>
