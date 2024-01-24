@@ -139,13 +139,12 @@ const MovieList = () => {
           <p>{selectedMovies.overview}</p>
           <p></p>
         </div>
+
         <div className="buttons">
           <GoPlay id="play" />
-          <button className={"moviePlay"}>Play Trailer</button>
-          <button id="later">Watch Later</button>
+          <div className="moviePlay">Play Movie</div>
+          <div id="later">Watch Later</div>
         </div>
-
-     
       </div>
 
       <div className="header">
@@ -162,7 +161,12 @@ const MovieList = () => {
               })}
             </ul>
           </li>
+        </header>
+      </div>
+      <div className="container">{renderMovies(movies)}</div>
 
+      <div className="header">
+        <header className="headerListing">
           <li className="headerList">
             Free To Watch
             <ul id="tabs">
@@ -177,7 +181,12 @@ const MovieList = () => {
               })}
             </ul>
           </li>
+        </header>
+      </div>
+      <div className="container">{latestMovies(latest)}</div>
 
+      <div className="header">
+        <header className="headerListing">
           <li className="headerList">
             Trending Today
             <ul id="tabs">
@@ -192,9 +201,6 @@ const MovieList = () => {
           </li>
         </header>
       </div>
-
-      <div className="container">{renderMovies(movies)}</div>
-      <div className="container">{latestMovies(latest)}</div>
       <div className="container">{movieVideos(videos)}</div>
 
       <div

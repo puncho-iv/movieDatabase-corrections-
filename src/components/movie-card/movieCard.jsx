@@ -3,7 +3,6 @@ import './movieCard.css';
 
 const MovieCard = ({ movie, selectMovie }) => {
   const image_path = 'https://image.tmdb.org/t/p/w500';
-
   const roundedVoteAverage = movie.vote_average.toFixed(1);
 
   return (
