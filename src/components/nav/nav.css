@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins";
 }
 
 .nav {
@@ -11,12 +12,10 @@
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  height: 9vh;
+  height: 72px;
   color: var(--header-color);
-  padding: 20px 60px;
-  background-color: black;
-  /* position: sticky;
-  top: 0; */
+  padding: 0px 40px;
+  background-color: var(--secondary-color);
 }
 
 .nav a img {
@@ -34,7 +33,7 @@
   cursor: pointer;
   position: relative;
   top: 10px;
-  font-family: Poppins;
+
   font-size: 18px;
 }
 

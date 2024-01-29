@@ -28,7 +28,7 @@
 
 .col2 {
   flex: 4 !important;
-  padding-top: 10rem !important;
+
 
 }
 
@@ -180,7 +180,7 @@
   width: 20%;
   height: 8%;
   transition: outline 200ms;
-  margin-top: 8rem;
+  margin-top: 5rem;
   margin-left: -1rem;
   cursor: pointer;
   font-weight: 600;

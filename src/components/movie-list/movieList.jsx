@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "../movie-card/movieCard";
-import VideoCard from "../videos/videoCard";
 import "./movieList.css";
 import { GoPlay } from "react-icons/go";
-import YouTube from "react-youtube";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade } from "swiper";
-
 import {
   getInTheatres,
   getMovies,
@@ -20,7 +14,6 @@ import {
 
 const MovieList = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
-
   const [movies, setMovies] = useState([]);
   const [latest, setLatest] = useState([]);
   const [movieType, setMovieType] = useState("Streaming");
@@ -28,9 +21,8 @@ const MovieList = () => {
   const [videoType, setVideoType] = useState("Today");
   const [selectedMovies, setSelectedMovies] = useState([]);
   const [selectedVideos, setSelectedVideos] = useState([]);
-  const [, setTrendingMovies] = useState([]);
   const [videos, setVideos] = useState([]);
-
+  
   const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
   const category01 = ["Movies", "TV"];
   const category02 = ["Today", "Trending"];
@@ -46,7 +38,7 @@ const MovieList = () => {
       if (movieType === "In Theatres") {
         const { data } = await getTopRatedMovies();
         setMovies(data.results);
-        setSelectedMovies(data.results[1]);
+        setSelectedMovies(data.results[0]);
       } else if (movieType === "For Rent") {
         const { data } = await getMoviesForRent();
         setMovies(data.results);

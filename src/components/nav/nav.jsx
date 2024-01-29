@@ -1,15 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./nav.css";
 import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
 import { RiSearch2Line } from "react-icons/ri";
 import deleteButton from "../../images/close.png";
 import menuIcon from "../../images/menu.png";
+import MovieCard from "../movie-card/movieCard";
 
 const Nav = () => {
   const [openMenu, setOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const [movies, setMovies] = useState([]);
+  const [selectedMovies, setSelectedMovies] = useState([]);
 
+  const renderMovies = (movies) =>
+    movies.map((movie) => (
+      <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
+    ));
+
+  const selectMovie = async (movie) => {
+    const data = trendingMovies(movie.id);
+    console.log("movie data", data);
+    setSelectedMovies(movie);
+  };
+
+  useEffect(() => {
+    trendingMovies();
+  }, []);
+
+  const trendingMovies = (movie) =>
+    movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
 
   const menuItems = [
     { name: "Action", link: "/action" },
@@ -44,10 +64,8 @@ const Nav = () => {
             <input
               type="text"
               placeholder="Lookup Movie..."
-              aria-label="search movies"
-              autoComplete="off"
               value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
+              onChange={(value) => setSearchInput(value)}
             />
           </div>
 
@@ -57,7 +75,7 @@ const Nav = () => {
               onClick={() => {
                 setSearchInput(""); // Optionally clear the search input on cancel
               }}
-              search-toggler
+              // search-toggler
             >
               <img src={deleteButton} alt="cancel search" className="close" />
             </button>
@@ -67,23 +85,13 @@ const Nav = () => {
         <div>
           <ul className={`nav_menu ${openMenu ? "open" : " "}`}>
             <li className="nav-item">
-              <a href="/home">Home</a>
+              <a href="/">Home</a>
             </li>
             <li className="nav-item">
-              Movies
-              <ul className="nav-item-drop">
-                {menuItems.map((menuItem, index) => (
-                  <li key={index}>
-                    <a href={menuItem.link}>{menuItem.name}</a>
-                  </li>
-                ))}
-              </ul>
+              <a href="/movie/"> Movies</a>
             </li>
             <li className="nav-item">
-              TV Shows
-              <ul className="nav-item-drop">
-                {/* Replace this with your TV Shows items */}
-              </ul>
+              <a href="/tv_shows"> TV Shows</a>
             </li>
             <li className="nav-item">
               More
@@ -121,37 +129,6 @@ const Nav = () => {
           )}
         </button>
       </div>
-{/* 
-      <nav className="sidebar">
-        <div className="sidebar_inner">
-          <div className="sidebar-list">
-            <p className="title">Genre</p>
-            <a href="/home" className="sidebar-link">
-              Action
-            </a>
-            <a href="/home" className="sidebar-link">
-              Comedy
-            </a>
-            <a href="/home" className="sidebar-link">
-              Romance
-            </a>
-            <a href="/home" className="sidebar-link">
-              Horror
-            </a>
-            <a href="/home" className="sidebar-link">
-              Adventure
-            </a>
-            <a href="/home" className="sidebar-link">
-              Drama
-            </a>
-            <a href="/home" className="sidebar-link">
-              Sci-Fi
-            </a>
-          </div>
-          
-          
-        </div>
-      </nav> */}
     </div>
   );
 };
