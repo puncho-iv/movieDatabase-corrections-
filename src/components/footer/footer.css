@@ -14,17 +14,15 @@
     align-items: center;
     height: 50vh;
     color: var(--header-color);
-    background: linear-gradient(to right, rgba(159, 79, 107, 100), rgba(182, 77, 94, 100));
+    background: var(--secondary-color);
     justify-content: center;
 }
 
 .footer_container {
     display: flex;
     gap: 2rem;
-    width: 40%;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
-    padding: 8rem;
 }
 
 .footerRight {
@@ -42,8 +40,6 @@
 .subscribe-box {
     display: flex;
     align-items: center;
-    width: var(--textbox-width);
-    max-width: var(--button-width);
     background-color: white;
     border-radius: 10px;
     padding: 0.5rem 1rem;
@@ -116,7 +112,7 @@
     }
     #footer-copyright{
         margin-top: 5rem;
-        background-color: var(--color-secondary);
+        background-color: var(--primary-color);
     }
     #footer-copyright em {
         font-style: normal;
@@ -131,7 +127,7 @@
     }
     #footer-copyright{
         margin-top: 5rem;
-        background-color: var(--color-secondary);
+        background-color: var(--primary-color);
     }
     #footer-copyright em {
         font-style: normal;

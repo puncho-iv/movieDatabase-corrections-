@@ -10,7 +10,6 @@
 .container {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: nowrap; */
   gap: 0.5rem;
   width: 14rem;
   overflow-x: auto;
@@ -21,10 +20,8 @@
   position: relative;
   width: 14rem;
   height: 18rem;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow-x: auto;
-  border: 1px solid rgb(99, 99, 99);
-  margin-top: 4rem;
 
 }
 
@@ -39,6 +36,7 @@
   padding-left: 100;
   position: relative;
   top: 100;
+
 }
 
 .heroContent p {
@@ -55,7 +53,7 @@
 .hero {
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background-size: cover;
   flex-direction: column;
 }
@@ -70,9 +68,7 @@
 
 .moviePlay {
   color: var(--header-color);
-  background: linear-gradient(to right,
-      rgba(159, 79, 107, 100),
-      rgba(182, 77, 94, 100));
+  background: var(--secondary-color);
   font-size: 16px;
   font-weight: 600;
   font-family: Poppins;
@@ -80,7 +76,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  width: 10%;
+  min-width: 12%;
   height: 60;
   padding-left: 10;
 }
@@ -91,7 +87,7 @@
   font-size: 35px;
   width: 25px;
   height: 25px;
-  left: 120;
+  left: 140;
 }
 
 .buttons {
@@ -102,12 +98,12 @@
 }
 
 #later {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
   font-size: 16px;
   font-family: Poppins;
-  color: var(--color-bg-variant);
-  width: 10%;
+  color: var(--secondary-color);
+  min-width: 12%;
   height: 60px;
   border-radius: 50px;
   align-items: center;
@@ -122,37 +118,25 @@
 
 /*===============HEADER================*/
 .header {
-  border: none;
-  background: transparent;
-  position: relative;
-  width: 100%;
-  margin-bottom: 20px; /* Add margin at the bottom for spacing */
+  min-width: 70%;
+  padding: 30px;
 }
 
-.headerListing {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 1;
-}
-
-.headerListing > .headerList {
-  font-family: Poppins;
-  font-size: 25px;
-  font-weight: 700;
-  padding-left: 50px; /* Add 'px' to the padding value */
-  top: 60px;
+.headerListing>.headerList {
+  font-size: 20px;
+  font-weight: 600;
+  top: 10px;
   gap: 50px;
-  background-color: none;
-  margin-top: -1rem;
+  align-items: center;
+  display: flex;
 }
-
 
 .headerListing li {
-  position: relative;
   display: flex;
-  gap: 10rem;
   flex-direction: row;
+  color: var(--header-color);
+  align-items: center;
+  display: flex;
 }
 
 .headerList ul {
@@ -161,24 +145,21 @@
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  border: 2.5px solid var(--color-bg-variant);
+  border: 2.5px solid var(--header-color);
   border-radius: 30px;
   align-items: center;
   justify-content: center;
-  width: 30%;
-
-  gap: 5rem;
-  height: 2.5rem;
-  background-color: none;
+  min-width: 25%;
+  padding: 5;
 }
 
 #tabs li button {
   text-decoration: none;
-  color: var(--color-bg-variant);
+  color: var(--header-color);
   border-radius: 30px;
   transition: var(--header-color) 200ms ease-in-out;
   background-color: transparent;
-  padding: 0.1rem 0.3rem;
+  padding: 5;
 }
 
 #tabs {
@@ -188,28 +169,27 @@
   cursor: pointer;
   border-radius: 40px;
   align-items: center;
-  width: 40%;
+  min-width: 25%;
   text-decoration: none;
 }
 
-#tabs > li {
-  width: 100%; /* Make each list item take up 100% width */
-  margin-bottom: 2px; /* Add margin between buttons */
-
+#tabs>li {
+  min-width: 24%;
 }
 
-#tabs > li button:hover,
-#tabs > li button:focus {
-  background: var(--color-bg-variant);
-  color: var(--header-color);
-  width: 100%; /* Expand to 100% width */
-  transition: width 200ms ease-in-out; /* Adjust the transition property */
+#tabs>li button:hover,
+#tabs>li button:focus {
+  background: var(--header-color);
+  color: var(--color-bg-variant);
+  width: 100%;
+  transition: width 200ms ease-in-out;
+  /* Adjust the transition property */
   height: 2rem;
   justify-content: center;
   align-items: center;
   font-weight: 700;
   border-radius: 40px;
-  margin: 0; /* Remove margin when hovered */
+  margin: 0;
 }
 
 
@@ -221,8 +201,7 @@
   }
 
   .heroContent h1 {
-    font-size: 30px;
-    max-width: 100%;
+    display: none;
   }
 
   .heroContent p {
@@ -275,10 +254,29 @@
 
 
 
-  /* .search-btn {
-    display: flex;
+}
 
-  } */
-
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header{
+    padding: 0;
+    width: 25px;
+    margin-top: 20px;
+  }
+  .heroContent p{
+    display: none;
+  }
+  .heroContent h1{
+    display: none;
+  }
+  .headerList ul{
+    height: 7vh;
+  }
+  .headerListing > .headerList {
+    font-size: 18px;
+    white-space: nowrap;
+    padding-left: 20;
+  }
+  .buttons{
+    display: none;
+  }
 }

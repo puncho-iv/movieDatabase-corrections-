@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   border: 0;
@@ -10,7 +10,7 @@
   text-decoration: none;
 }
 
-:root{
+:root {
   --color-bg: #eceaea;
   --color-bg-variant: #7c334e;
   --color-secondary: #F69090;
@@ -20,38 +20,39 @@
   --color-dark: #928b8b;
   --color-hover: #9C4D6A;
   --color-bg-va: #eb7ba4;
-  --gradient: linear-gradient(to right, rgba(159,79,107,100), rgba(182,77,94,100));
+  --primary-color: #0f171e;
+  --secondary-color: #1a242f;
+  --font-primary: #fff;
+  --font-secondary: #79b8f3 --gradient: linear-gradient(to right, rgba(159, 79, 107, 100), rgba(182, 77, 94, 100));
 
-  --transition: all 400ems ease ;
+  --transition: all 400ems ease;
 
   --container-width-lg: 75%;
   --container-width-md: 86%;
   --container-width-sm: 90%;
 }
 
-html{
+html, .App, body {
   scroll-behavior: smooth;
+  min-height: 100%;
+  background: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
 
 
-.navigation{
+.navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-body{
-  background: var(--header-background);
-  font-family: "Poppins", sans-serif;
-  text-decoration: none;  
-}
-
 /*==================GENERAL STYLES/*==================*/
-.container{
+.container {
   width: var(--container-width-lg);
   margin: 0 auto;
 }
@@ -60,41 +61,41 @@ h1,
 
 h3,
 h4,
-h5{
+h5 {
   font-weight: 500;
   text-decoration: none;
 }
 
-h1{
+h1 {
   font-size: 3rem;
 }
 
-section{
+section {
   margin-top: 4rem;
   height: 75vh;
 }
 
-section > h2,
-section > h5{
+section>h2,
+section>h5 {
   text-align: left;
   color: var(--header-color)
 }
 
-section > h2 {
+section>h2 {
   color: var(--color-text);
   margin-bottom: 2.5rem;
 }
 
-.text-light{
+.text-light {
   color: var(--color-bg);
 }
 
-a{
+a {
   color: var(--header-color);
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   color: var(--header-color);
 }
 
@@ -104,23 +105,23 @@ a:hover{
 
 
 /*============ MEDIA QUERY (MEDIUM DEVICES)============*/
-@media screen and (max-width:1024px){
-  .container{
+@media screen and (max-width:1024px) {
+  .container {
     width: var(--container-width-md);
   }
 
-  section{
+  section {
     margin-top: 10rem;
   }
 }
 
 /*============ MEDIA QUERY (SMALL DEVICES)============*/
-@media screen and (max-width:600px){
-  .container{
+@media screen and (max-width:600px) {
+  .container {
     width: var(--container-width-sm);
   }
 
-  section > h2 {
+  section>h2 {
     margin-bottom: 2rem;
   }
 }
