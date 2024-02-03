@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "../movie-card/movieCard";
 import "./movieList.css";
-import { GoPlay } from "react-icons/go";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
   getInTheatres,
   getMovies,
@@ -11,6 +12,7 @@ import {
   getTrendingMovies,
   getTrendingToday,
 } from "../../api/movieService";
+import { Link } from "react-router-dom";
 
 const MovieList = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
@@ -22,7 +24,7 @@ const MovieList = () => {
   const [selectedMovies, setSelectedMovies] = useState([]);
   const [selectedVideos, setSelectedVideos] = useState([]);
   const [videos, setVideos] = useState([]);
-  
+
   const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
   const category01 = ["Movies", "TV"];
   const category02 = ["Today", "Trending"];
@@ -120,24 +122,50 @@ const MovieList = () => {
 
   return (
     <div>
-      <div
-        className="hero"
-        style={{
-          backgroundImage: `url('${image_path}${selectedMovies.backdrop_path}')`,
-        }}
-      >
-        <div className="heroContent">
-          <h1>{selectedMovies.title}</h1>
-          <p>{selectedMovies.overview}</p>
-          <p></p>
-        </div>
-
-        <div className="buttons">
-          <GoPlay id="play" />
-          <div className="moviePlay">Play Movie</div>
-          <div id="later">Watch Later</div>
-        </div>
+      <div className="">
+        <Carousel
+          showThumbs={false}
+          autoPlay={true}
+          transitionTime={30}
+          infiniteLoop={true}
+          showStatus={false}
+        >
+          {movies.map(
+            (
+              movie // Corrected "latestMovies" to "latest"
+            ) => (
+              <Link
+                to={`/movie/${movie.id}`}
+                key={movie.id}
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                {" "}
+                {/* Added "to" prop with appropriate route */}
+                <div className="posterImage">
+                  <img
+                    src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                    alt=""
+                  />{" "}
+                  {/* Corrected "selectedMovies" to "movie" */}
+                </div>
+                <div className="posterImage_overlay">
+                  <div className="posterImage_title">
+                    {movie ? movie.title : ""}
+                  </div>
+                  <div className="posterImage_rating">
+                    {movie ? movie.release_date : ""}{" "}
+          
+                  </div>
+                  <div className="posterImage_description">
+                    {movie ? movie.overview : ""}
+                  </div>
+                </div>
+              </Link>
+            )
+          )}
+        </Carousel>
       </div>
+  
 
       <div className="header">
         <header className="headerListing">
