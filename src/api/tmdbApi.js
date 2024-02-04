@@ -1,4 +1,4 @@
-import apiConfig from "./apiConfig";
+// import apiConfig from "./apiConfig";
 import axiosClient from "./axiosClient";
 
 export const category = {
@@ -94,8 +94,8 @@ export function getVideos() {
   // Implement this if needed
 }
 
-export function getMovieVideos(movieId) {
-  return axiosClient.get(`/movie/${movieId}/videos`);
+export function getMovieDetail(id) {
+  return axiosClient.get(`/movie/${id}`);
 }
 
 export function getOnTheAir() {
