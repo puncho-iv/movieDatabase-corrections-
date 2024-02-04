@@ -1,4 +1,3 @@
-
 import apiConfig from "./apiConfig";
 import axiosClient from "./axiosClient";
 
@@ -23,85 +22,92 @@ export const tvType = {
 
 const tmdbApi = {
   getMovieList: (type, params) => {
-    const url = 'movie/' + tvType[type];
-    return axiosClient.get(url,params);
+    const url = 'movie/' + movieType[type];
+    return axiosClient.get(url, { params });
   },
-
 
   getTvList: (type, params) => {
     const url = 'tv/' + tvType[type];
-    return axiosClient.get(url,params);
+    return axiosClient.get(url, { params });
   },
 
   getVideos: (cate, id) => {
-    const url =category[cate] + '/' + id + '/videos';
-    return axiosClient.get(url, {params: {}});
+    const url = `${category[cate]}/${id}/videos`;
+    return axiosClient.get(url);
   },
 
-  search: (cate, params) => {
-    const url ='search/' + category[cate];
-    return axiosClient.get(url, params);
+  search: (cate, query, params) => {
+    const url = `search/${category[cate]}`;
+    return axiosClient.get(url, { params: {query, ...params} });
   },
 
   detail: (cate, id, params) => {
-    const url = category[cate] + '/' + id 
-    return axiosClient.get(url, params);
+    const url = `${category[cate]}/${id}`;
+    return axiosClient.get(url, { params });
   },
 
   credits: (cate, id) => {
-    const url = category[cate] + '/' + id + '/credits';
-    return axiosClient.get(url, {params: {}});
+    const url = `${category[cate]}/${id}/credits`;
+    return axiosClient.get(url);
   },
 
   similar: (cate, id) => {
-    const url = category[cate] + '/' + id + '/similar';
-    return axiosClient.get(url, {params: {}});
-  },
-
-
+    const url = `${category[cate]}/${id}/similar`;
+    return axiosClient.get(url);
+  }
 }
+
+// Functions for specific types of movies and TV shows
 export function getTopRatedMovies() {
-  return apiConfig.get("/tv/top_rated?");
+  return tmdbApi.getMovieList('top_rated');
 }
 
 export function getStreamingMovies() {
-  return apiConfig.get("/movie/now_playing?");
+  return tmdbApi.getMovieList('now_playing');
 }
 
 export function getMoviesForRent() {
-  return apiConfig.get("/movie/popular?");
+  return tmdbApi.getMovieList('popular');
 }
 
 export function getInTheatres() {
-  return apiConfig.get("/movie/upcoming?");
+  return tmdbApi.getMovieList('upcoming');
 }
 
 export function getMovies() {
-  return apiConfig.get("/movie/top_rated?");
+  return tmdbApi.getMovieList('top_rated');
 }
 
 export function getTV() {
-  return apiConfig.get("/tv/airing_today?");
+  return tmdbApi.getTvList('airing_today');
 }
 
 export function getTrendingMovies() {
-  return apiConfig.get("/trending/all/day?");
+  return axiosClient.get("/trending/all/day");
 }
 
-export function getTrendingToday() {
-  return apiConfig.get("/tv/{tv_id}/season/{season_number}/videos?");
+export function getTrendingToday(tvId, seasonNumber) {
+  return axiosClient.get(`/tv/${tvId}/season/${seasonNumber}/videos`);
 }
 
 export function getVideos() {
-  return apiConfig.get("/")
+  // Implement this if needed
 }
 
-export function getMovieVideos() {
-  return apiConfig.get("/movie/{movie_id}/videos");
+export function getMovieVideos(movieId) {
+  return axiosClient.get(`/movie/${movieId}/videos`);
 }
 
 export function getOnTheAir() {
-  return apiConfig.get("/tv/on_the_air?");
+  return tmdbApi.getTvList('on_the_air');
+}
+
+export function getAllMovies() {
+  // Implement this if needed
+}
+
+export function getPopularTV() {
+  return tmdbApi.getTvList('popular');
 }
 
 export default tmdbApi;
