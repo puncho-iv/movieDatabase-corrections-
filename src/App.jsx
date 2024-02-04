@@ -15,7 +15,7 @@ const App = () => {
 
         <Routes>
         <Route index element={<Home />}></Route>
-          <Route path="/movie/:id" element={<Card />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="/movie" element={<Card />} />
           <Route path="/tv-shows" element={<TV />} />
           <Route path="/movie/:type" element={<Home/>} />
