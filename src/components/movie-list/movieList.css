@@ -25,6 +25,10 @@
   transition: opacity .3s;
 }
 
+.posterImage__overlay:hover {
+  opacity: 1;
+}
+
 .posterImage_rating {
   margin-left: 3rem;
 }
@@ -53,21 +57,23 @@
 }
 
 /*===============CONTAINERS================*/
-.container {
+/* .container {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   width: 14rem;
   overflow-x: auto;
   overflow-y: hidden;
-}
+  height: 350px;
+} */
 
 .container img {
-  position: relative;
+  position: absolute;
   width: 14rem;
-  height: 18rem;
+  height: 300px;
   border-radius: 10px;
   overflow-x: auto;
+  align-items: center;
 
 }
 
@@ -76,16 +82,15 @@
 
 /*===============HEADER================*/
 .header {
-  min-width: 70%;
+  max-width: 100%;
   padding: 30px;
 }
 
 .headerListing>.headerList {
   font-size: 20px;
   font-weight: 600;
-  top: 10px;
-  gap: 50px;
-  align-items: center;
+  gap: 20px;
+  align-items: center; 
   display: flex;
 }
 
@@ -103,21 +108,22 @@
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  border: 2.5px solid var(--header-color);
+  border: 0.5px solid var(--header-color);
   border-radius: 30px;
   align-items: center;
   justify-content: center;
-  min-width: 25%;
   padding: 5;
+  max-width: 100%;
 }
 
 #tabs li button {
   text-decoration: none;
   color: var(--header-color);
   border-radius: 30px;
-  transition: var(--header-color) 200ms ease-in-out;
+  transition: var(--header-color) 200ms ease-in;
   background-color: transparent;
-  padding: 5;
+  padding:5;
+
 }
 
 #tabs {
@@ -127,27 +133,22 @@
   cursor: pointer;
   border-radius: 40px;
   align-items: center;
-  min-width: 25%;
   text-decoration: none;
-}
-
-#tabs>li {
-  min-width: 24%;
 }
 
 #tabs>li button:hover,
 #tabs>li button:focus {
   background: var(--header-color);
   color: var(--color-bg-variant);
-  width: 100%;
-  transition: width 200ms ease-in-out;
-  /* Adjust the transition property */
+  transition: width 200ms ease-in;
   height: 2rem;
   justify-content: center;
   align-items: center;
   font-weight: 700;
   border-radius: 40px;
   margin: 0;
+  padding-left: 20;
+  padding-right: 20;
 }
 
 

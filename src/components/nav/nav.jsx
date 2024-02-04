@@ -31,24 +31,14 @@ const Nav = () => {
   const trendingMovies = (movie) =>
     movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
 
-  const menuItems = [
-    { name: "Action", link: "/action" },
-    { name: "Romance", link: "/romance" },
-    { name: "Sci-Fi", link: "/sci-fi" },
-  ];
-
+    const handleSearch = (event) => {
+      setSearchInput(event.target.value)
+    }
+    
   const moreMenu = [
     { name: "Uploads", link: "/uploads" },
     { name: "Downloads", link: "/downloads" },
     { name: "Settings", link: "/settings" },
-  ];
-
-  const avatarMenu = [
-    { name: "Change User", link: "/change-user" },
-    { name: "Settings", link: "/user-settings" },
-    { name: "Edit Profile", link: "/edit-profile" },
-    { name: "WatchList", link: "/watchlist" },
-    { name: "Logout", link: "/logout" },
   ];
 
   return (
@@ -65,7 +55,7 @@ const Nav = () => {
               type="text"
               placeholder="Lookup Movie..."
               value={searchInput}
-              onChange={(value) => setSearchInput(value)}
+              onChange={handleSearch}
             />
           </div>
 
@@ -88,10 +78,10 @@ const Nav = () => {
               <a href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a href="/movie/"> Movies</a>
+              <a href="/movie"> Movies</a>
             </li>
             <li className="nav-item">
-              <a href="/tv_shows"> TV Shows</a>
+              <a href="/tv-shows"> TV Shows</a>
             </li>
             <li className="nav-item">
               More

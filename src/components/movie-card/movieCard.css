@@ -6,47 +6,68 @@
   box-sizing: border-box;
 }
 
-.movieCard h5 {
-  font-size: 18px;
-  font-family: Poppins;
-  font-weight: 600;
-  width: 100%;
-  margin: 8px;
-  margin-top: 20px;
-}
-
-.averageVote {
-  background-color: #333;
-  color: #fff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 70px;
-  right: 10px;
-  z-index: 1;
+.movieCard {
+  display: inline-block;
+  transition: transform .2s;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.19rem;
+  cursor:pointer;
+  min-width:200px;
+  height:300px;
+  z-index:0;
+  border: 1px solid rgb(99, 99, 99);
 }
 
 .movieCard:hover {
-  transform: scale(1.1);
-  z-index: 1;
+  transform: scale(1.2);
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.movieCard {
-  position: relative;
+.cards_img {
+  height: 300px;
 }
 
-.averageVote h3 {
+.cards_overlay {
+  position: absolute;
+  padding: 0 1rem 1rem 1rem;
+  bottom: 0px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  justify-content: flex-end;
+  background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+  opacity: 0;
+  transition: opacity .2s;
+}   
+
+.cards_overlay:hover {
+  opacity: 1;
+}
+
+.card_title {
+  font-weight: 900;
+  font-size: 0.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.card_runtime {
+  font-size: .75rem;
+  margin-bottom: 0.25rem;
+}
+
+.averageVote {
+  float: right;
+}
+
+.card_description {
+  font-style: italic;
   font-size: 14px;
-  font-family: Poppins;
-  font-weight: 500;
-  position: relative;
-  top: 4px;
+  margin-bottom: 0.25rem;
 }
-
 
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {

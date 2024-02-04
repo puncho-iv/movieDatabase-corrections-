@@ -25,15 +25,21 @@ export function getTV() {
 }
 
 export function getTrendingMovies() {
-  return apiConfig.get("/trending/all/day?");
+  return apiConfig.get("/tv/on_the_air?");
 }
 
 export function getTrendingToday() {
   return apiConfig.get("/tv/{tv_id}/season/{season_number}/videos?");
 };
 
-export function getMovieVideos() {
-  return apiConfig.get("/movie/{movie_id}/videos");
+export function getAllMovies() {
+  return apiConfig.get("/movie/list?");
 }
+
+export function getPopularTV() {
+  return apiConfig.get("/tv/popular")
+}
+
+
 
 
