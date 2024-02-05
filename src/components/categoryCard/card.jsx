@@ -29,7 +29,7 @@ const Card = () => {
 
 
   const selectMovie = async (movie) => {
-    navigate(`/movie/${movie.id}`); // Navigate to movie details page
+    navigate(`/${movie.id}`); // Navigate to movie details page
     setSelectedMovies(movie);
   };
 
@@ -52,7 +52,7 @@ const Card = () => {
       <h2>Latest Movies</h2>
       <div className="latest-movies">
         {latest.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
+          <MovieCard key={movie.id} movie={movie}  />
         ))}
       </div>
     </div>

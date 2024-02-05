@@ -34,7 +34,7 @@ const TV = () => {
       <h2>TV Shows</h2>
       <div className="latest-movies">
         {latest.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
+          <MovieCard key={movie.id} movie={movie}  />
         ))}
       </div>
     </div>

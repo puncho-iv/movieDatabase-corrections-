@@ -87,3 +87,27 @@
     margin-left: auto;
 }
 
+.movie_detailBottom{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie_production {
+    width: 200px;
+    margin: 2rem;
+}
+
+.company_name {
+    color: white;
+}
+
+.production_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0px 0px 5px #000000;
+}
+
