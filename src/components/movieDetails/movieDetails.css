@@ -1,113 +1,114 @@
 .movie {
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .movie_intro {
-    width: 80%;
+  width: 80%;
 }
 
-
 .movie__backdrop {
-    width: 100%;
-    height: 500px;
-    object-fit:cover;
-    object-position: 0 30%;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 0 30%;
 }
 
 .movie_detail {
-    align-items: center;
-    width: 75%;
-    display: flex;
-    position: relative;
-    bottom: 245px;
+  align-items: center;
+  width: 75%;
+  display: flex;
+  position: relative;
+  bottom: 245px;
 }
 
 .movie_detailLeft {
-    margin-right: 30px;
+  margin-right: 30px;
+  position: relative;
+  top: 200px;
 }
 
 .movie_poster {
-    width:300px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
 }
 
 .movie_detailRight {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    height: 450px;
-    justify-content: space-between;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  justify-content: space-between;
 }
 
-.movie_detailRightTop >  div{
-    text-shadow: 0px 0px 5px #000000;
-    margin-bottom: .5rem;
+.movie_detailRightTop > div {
+  text-shadow: 0px 0px 5px #000000;
+  margin-bottom: 0.5rem;
+  top: 250px;
+  position: relative;
 }
 
-.movie_name{
-    font-weight: 900;
-    font-size: 35px;
+.movie_name {
+  font-weight: 900;
+  font-size: 35px;
 }
 
 .movie_genres {
-    margin: 1.25rem 0;
-    
+  margin: 1.25rem 0;
 }
 
 .movie_genre {
-    padding: .5rem;
-    border: 2px solid white;
-    border-radius: 30px;
-    margin-right: 1rem;
-    padding-left: 20;
-    padding-right: 20;
+  padding: 0.5rem;
+  border: 2px solid white;
+  border-radius: 30px;
+  margin-right: 1rem;
+  padding-left: 20;
+  padding-right: 20;
 }
 
 .synopsisText {
-    font-size: 20px;
-    margin-bottom: 1.25rem;
-    font-weight: 400;
-    display: flex;
-    position: relative;
-    align-items: center;
-    color: white;
+  font-size: 20px;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+  display: flex;
+  position: relative;
+  align-items: center;
+  color: white;
 }
 
 .movie_detailRightBottom {
-    margin: 2rem 0;
-    flex: 0.8;
+  margin: 18rem 0;
+  flex: 0.8;
 }
 
 .synopsisText > div:last-of-type {
-    margin-left: auto;
+  margin-left: auto;
 }
 
-.movie_detailBottom{
-    display: flex;
-    width: 80%;
-    justify-content: center;
-    align-items: center;
+.movie_detailBottom {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie_production {
-    width: 200px;
-    margin: 2rem;
+  width: 200px;
+  margin: 2rem;
 }
 
 .company_name {
-    color: white;
+  color: white;
 }
 
 .production_image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 0px 0px 5px #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0px 0px 5px #000000;
 }
-

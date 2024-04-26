@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
 }
@@ -22,7 +23,7 @@
   align-items: flex-start;
   background-color: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
   opacity: 1;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 .posterImage__overlay:hover {
@@ -30,22 +31,22 @@
 }
 
 .posterImage_rating {
-  margin-left: 3rem;
+  font-weight: 500;
 }
 
 .posterImage_description {
   font-style: italic;
   font-size: 1rem;
-  margin-bottom: 0.25rem;
-  display: flex;
+
   text-align: left;
-  width: 50%;
+  width: 30%;
+  text-shadow: 0.5px 0px #000;
 }
 
 .posterImage_title {
   font-weight: 900;
   font-size: 4rem;
-  margin-bottom: 0.4rem;
+  text-shadow: 0.5px 0px #000;
   text-align: left;
 }
 
@@ -74,11 +75,9 @@
   border-radius: 10px;
   overflow-x: auto;
   align-items: center;
-
 }
 
 /*===============END OF CONTAINERS================*/
-
 
 /*===============HEADER================*/
 .header {
@@ -86,11 +85,11 @@
   padding: 30px;
 }
 
-.headerListing>.headerList {
+.headerListing > .headerList {
   font-size: 20px;
   font-weight: 600;
   gap: 20px;
-  align-items: center; 
+  align-items: center;
   display: flex;
 }
 
@@ -122,8 +121,7 @@
   border-radius: 30px;
   transition: var(--header-color) 200ms ease-in;
   background-color: transparent;
-  padding:5;
-
+  padding: 5;
 }
 
 #tabs {
@@ -136,8 +134,8 @@
   text-decoration: none;
 }
 
-#tabs>li button:hover,
-#tabs>li button:focus {
+#tabs > li button:hover,
+#tabs > li button:focus {
   background: var(--header-color);
   color: var(--color-bg-variant);
   transition: width 200ms ease-in;
@@ -151,15 +149,12 @@
   padding-right: 20;
 }
 
-
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .hero {
     display: flex;
     max-width: 100%;
     z-index: -1;
   }
-
-
 
   .posterImage_description {
     display: none;
@@ -212,9 +207,6 @@
     overflow-x: auto;
     margin-top: 30;
   }
-
-
-
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -236,7 +228,7 @@
     height: 7vh;
   }
 
-  .headerListing>.headerList {
+  .headerListing > .headerList {
     font-size: 18px;
     white-space: nowrap;
     padding-left: 20;

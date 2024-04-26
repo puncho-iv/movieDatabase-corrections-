@@ -7,19 +7,6 @@ const MovieDetails = () => {
   const image_path = "https://image.tmdb.org/t/p/original";
   const { id } = useParams();
 
-  //     const fetchData =async()=> {
-  //       try{
-  //         const response = await axiosClient.get(`/movie/${id}`);
-  //         setCurrent(response.data);
-  //         window.scrollTo(0,0)
-  //       } catch (error) {
-  //         console.log(error)
-  //       }
-  //     }
-
-  //     fetchData();
-  // }, [id])
-
   useEffect(() => {
     getData();
     window.scrollTo(0, 0);
@@ -89,6 +76,7 @@ const MovieDetails = () => {
           </div>
         </div>
       </div>
+
       <div className="movie_detailBottom">
         <div className="company_image">
           {currentMovie &&
@@ -97,8 +85,11 @@ const MovieDetails = () => {
               (company) =>
                 company.logo_path && (
                   <span className="production_image">
-                    <img className="movie_production" src={`${image_path}${company ? company.logo_path: ''}`} alt="" />
-                    <span className="company_name">{company.name}</span>
+                    <img
+                      className="movie_production"
+                      src={`${image_path}${company ? company.logo_path : ""}`}
+                      alt=""
+                    />
                   </span>
                 )
             )}
