@@ -12,15 +12,14 @@ import {
   getTrendingMovies,
 } from "../../api/movieService";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [latest, setLatest] = useState([]);
   const [movieType, setMovieType] = useState("Streaming");
   const [freeToWatch, setFreeToWatch] = useState("Movies");
-  const [selectedMovies, setSelectedMovies] = useState([]);
-
+  const [, setSelectedMovies] = useState([]);
 
   const category = ["Streaming", "On TV", "For Rent", "In Theatres"];
   const category01 = ["Movies", "TV"];
@@ -31,7 +30,6 @@ const MovieList = () => {
       <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />
     ));
 
-  //category changes//
   useEffect(() => {
     const getData = async () => {
       if (movieType === "In Theatres") {
@@ -75,7 +73,6 @@ const MovieList = () => {
     getSecondData();
   }, [freeToWatch]);
 
-
   const selectMovie = async (movie) => {
     const data = trendingMovies(movie);
     console.log("movie data", data);
@@ -90,7 +87,6 @@ const MovieList = () => {
   const trendingMovies = (movie) =>
     movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
 
-
   useEffect(() => {
     trendingMovies();
   }, []);
@@ -101,46 +97,40 @@ const MovieList = () => {
         <Carousel
           showThumbs={false}
           autoPlay={true}
-          transitionTime={30}
+          transitionTime={10}
           infiniteLoop={true}
           showStatus={false}
         >
-          {movies.map(
-            (
-              movie // Corrected "latestMovies" to "latest"
-            ) => (
-              <Link
-                to={`/movie/${movie.id}`}
-                key={movie.id}
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                {" "}
-                {/* Added "to" prop with appropriate route */}
-                <div className="posterImage">
-                  <img
-                    src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-                    alt=""
-                  />{" "}
-                  {/* Corrected "selectedMovies" to "movie" */}
+          {movies.map((movie) => (
+            <Link
+              to={`/movie/${movie.id}`}
+              key={movie.id}
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              {" "}
+              {/* Added "to" prop with appropriate route */}
+              <div className="posterImage">
+                <img
+                  src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                  alt=""
+                />{" "}
+                {/* Corrected "selectedMovies" to "movie" */}
+              </div>
+              <div className="posterImage_overlay">
+                <div className="posterImage_title">
+                  {movie ? movie.title : ""}
                 </div>
-                <div className="posterImage_overlay">
-                  <div className="posterImage_title">
-                    {movie ? movie.title : ""}
-                  </div>
-                  <div className="posterImage_rating">
-                    {movie ? movie.release_date : ""}{" "}
-          
-                  </div>
-                  <div className="posterImage_description">
-                    {movie ? movie.overview : ""}
-                  </div>
+                <div className="posterImage_rating">
+                  {movie ? movie.release_date : ""}{" "}
                 </div>
-              </Link>
-            )
-          )}
+                <div className="posterImage_description">
+                  {movie ? movie.overview : ""}
+                </div>
+              </div>
+            </Link>
+          ))}
         </Carousel>
       </div>
-
 
       <div className="header">
         <header className="headerListing">

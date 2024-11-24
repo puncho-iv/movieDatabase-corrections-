@@ -99,6 +99,10 @@ a:hover {
   color: var(--header-color);
 }
 
+header {
+  color: white;
+}
+
 
 
 

@@ -40,6 +40,10 @@ export function getPopularTV() {
   return apiConfig.get("/tv/popular")
 }
 
+export function getReviews() {
+  return apiConfig.get("/movie/{movie_id}/reviews?api_key=41467446ef4c8f2ffa78fc5c6692fbd5&language=en-US")
+}
+
 
 
 

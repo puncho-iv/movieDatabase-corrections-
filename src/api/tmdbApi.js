@@ -102,10 +102,6 @@ export function getOnTheAir() {
   return tmdbApi.getTvList('on_the_air');
 }
 
-export function getAllMovies() {
-  // Implement this if needed
-}
-
 export function getPopularTV() {
   return tmdbApi.getTvList('popular');
 }

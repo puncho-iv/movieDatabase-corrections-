@@ -6,13 +6,13 @@ import {
   getTopRatedMovies,
  
 } from "../../api/movieService";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Card = () => {
-  const [movies, setMovies] = useState([]);
+  const [, setMovies] = useState([]);
   const [latest, setLatest] = useState([]);
-  const [selectedMovies, setSelectedMovies] = useState([]);
-  const navigate = useNavigate();
+  // const [selectedMovies, setSelectedMovies] = useState([]);
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,10 +28,10 @@ const Card = () => {
   }, []);
 
 
-  const selectMovie = async (movie) => {
-    navigate(`/${movie.id}`); // Navigate to movie details page
-    setSelectedMovies(movie);
-  };
+  // const selectMovie = async (movie) => {
+  //   navigate(`/${movie.id}`); // Navigate to movie details page
+  //   setSelectedMovies(movie);
+  // };
 
   useEffect(() => {
     // Fetch and set latest movies
