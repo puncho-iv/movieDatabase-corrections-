@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./movieDetails.css";
 import MovieCard from "../movie-card/movieCard";
-import { getReviews } from "../../api/movieService";
 
 const MovieDetails = () => {
   const [currentMovie, setCurrent] = useState();
   const [recommended, setRecommended] = useState([]);
   const [review, setReview] = useState([]);
+  const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
   const image_path = "https://image.tmdb.org/t/p/original";
   const { id } = useParams();
+
+  const toggleExpanded = (id) => {
+    setIsExpanded((prevState) => ({ ...prevState, [id]: !prevState[id] }));
+  };
 
   useEffect(() => {
     getData();
@@ -42,11 +46,6 @@ const MovieDetails = () => {
     const review = await reviewResponse.json();
     setReview(review.results);
   };
-
-  // const getReview = async () => {
-  //   const { data } = await getReviews(id);
-  //   setReview(data.results);
-  // };
 
   const selectMovie = async (movie) => {
     console.log(selectMovie);
@@ -98,8 +97,6 @@ const MovieDetails = () => {
                   ? currentMovie.genres.map((genre, index) => (
                       <span className="movie_genre" id={genre.id}>
                         {genre.name}
-
-                        {/* {index < currentMovie.genres.length - 1 && " , "} */}
                       </span>
                     ))
                   : ""}
@@ -124,33 +121,59 @@ const MovieDetails = () => {
           <h3 className="header">Reviews</h3>
         </div>
 
-        <div className="reviewCard">
+        <div className="review-line">
           {review && review.length > 0
-            ? review.map((movieReview) => (
-                <div key={movieReview.id} className="">
-                  <div className="reviewData">
-                    <div className="reviewHeader">
-                      <img
-                        src={`${image_path}${movieReview.author_details.avatar_path}`}
-                        alt=""
-                        className="review-image"
-                      /> 
-                      <h3> A review by {movieReview.author_details.username}</h3>
+            ? review.map((movieReview) => {
+                const expandedReviews = isExpanded[movieReview.id] || false;
+                return (
+                  <div key={movieReview.id}  className="reviewCard" >
+                    <div className="reviewData">
+                      <div className="reviewHeader">
+                        <img
+                          src={`${image_path}${movieReview.author_details.avatar_path}`}
+                          alt=""
+                          className="review-image"
+                        />
+                        <h3 className="reviewHeaderText">
+                          {" "}
+                          A review by {movieReview.author_details.username}
+                        </h3>
+                      </div>
+
+                      <div className="content_text">
+                        <p
+                          style={{
+                            display: "-webkit-box",
+                            WebkitLineClamp: expandedReviews ? "none" : 1,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                          }}
+                        >
+                          {movieReview.content}
+                        </p>
+                        {movieReview.content.length > 100 && (
+                          <button
+                            onClick={() => toggleExpanded(movieReview.id)}
+                            className="header"
+                          >
+                            {isExpanded ? "see less" : "see more"}
+                          </button>
+                        )}
+                      </div>
                     </div>
-                    
-                    <p className="content_text">{movieReview.content}</p>
                   </div>
-                </div>
-              ))
-            : "No reviews available"}
+                );
+              })
+            : <p className="header">"No reviews available"</p>}
         </div>
       </div>
 
-      <div className="">
+      <div className="recommendations">
         <div className="header">
           <h3>Recommendations</h3>
         </div>
-        <div className="recommended_movies">
+        <div className="recommended_movies_container">
           {recommended && recommended.length > 0
             ? recommended.map((movie) => (
                 <div key={movie.id} className="recommended_movie">

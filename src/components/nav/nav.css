@@ -16,19 +16,20 @@
   justify-content: space-between;
   height: 100px;
   color: var(--header-color);
-  padding: 0px 50px;
+  padding: 60px 300px;
   background-color: var(--secondary-color);
 }
 
 .nav-left {
   display: flex;
   align-items: center;
+  padding: 200px;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .nav a img {
@@ -40,7 +41,7 @@
 
 .login {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--header-color);
   transition: 0.3s ease-in-out;
   display: flex;
@@ -88,7 +89,7 @@
 
 .nav-item {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   font-family: Poppins;
   color: var(--header-color);
   transition: 0.3s ease-in-out;
@@ -119,7 +120,7 @@
 
 .subscription_btn {
   color: var(--color-dark);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   font-family: Poppins;
   background-color: var(--header-color);
@@ -349,7 +350,7 @@
 
   .subscription_btn {
     color: var(--color-dark);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     font-family: Poppins;
     background-color: var(--header-color);

@@ -94,11 +94,11 @@
 
 #footer-copyright {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 14px;
     color: white;
     margin-top: -4rem;
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #footer-copyright em {

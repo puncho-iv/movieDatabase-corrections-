@@ -67,7 +67,7 @@ class Footer extends Component {
 
 
       </div><p id="footer-copyright">
-          &copy; 2022.
+          &copy; 2022 | 
           <em>Movie Database Inc.</em>
         </p></>
     );
